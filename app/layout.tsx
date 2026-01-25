@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ScrollToHash } from "@/components/ScrollToHash";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "휴미즈 홈페이지 오신 것을 환영합니다.",
+  title: "휴미즈 | 데이터를 이해하는 기술, 사람을 위한 인텔리전스",
   description:
-    "휴미즈 홈페이지 오신 것을 환영합니다. 데이터 컴플라이언스와 AI 기반 가족 서비스를 통해 신뢰 가능한 기술의 기준을 만듭니다.",
+    "휴미즈는 기업 컨설팅과 AI 기반 가족 서비스 '내친구 버디'를 통해 신뢰와 따뜻함으로 일상을 더 편리하게 만듭니다.",
   openGraph: {
-    title: "휴미즈 홈페이지 오신 것을 환영합니다.",
-    description: "휴미즈 홈페이지 오신 것을 환영합니다.",
+    title: "휴미즈 | 데이터를 이해하는 기술, 사람을 위한 인텔리전스",
+    description: "기업 컨설팅과 내친구 버디를 만나보세요.",
   },
 };
 
@@ -27,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={inter.variable}>
+    <html lang="ko">
       <body className="antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 pt-16">

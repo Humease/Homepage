@@ -4,8 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 휴미즈 로고 블루 톤: 짙은 남색 ~ 밝은 하늘색 그라데이션 */
+/* ——— 디자인 토큰 (프리미엄 랜딩) ——— */
 :root {
+  /* 브랜드 컬러 */
   --primary: #1e3a5f;
   --primary-light: #2d5a8a;
   --primary-navy: #28375c;
@@ -14,32 +15,139 @@
   --accent-soft: #7eb8da;
   --accent-light: #e8f4fc;
   --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* 글래스모피즘 */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px rgba(30, 58, 95, 0.08);
+
+  /* 그라데이션 (애니메이션용 hue 고정) */
+  --gradient-hero-start: #f8fcff;
+  --gradient-hero-mid: #e8f4fc;
+  --gradient-hero-end: #d0e8f7;
+  --gradient-glow: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(77, 210, 255, 0.2), transparent 60%);
+
+  /* 블러 오브젝트 */
+  --blur-strong: 80px;
+  --blur-soft: 40px;
+
+  /* 라운드 */
+  --radius-card: 1.5rem;
+  --radius-button: 0.875rem;
+
+  /* 애니메이션 강도 (커스터마이즈 포인트) */
+  --motion-duration: 0.4s;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* reduced-motion: 사용자 선호 시 애니메이션 최소화 */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration: 0.01ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-pretendard);
-  background: #fff;
+  background: var(--gradient-hero-start);
   color: #1a1a1a;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Hero 배경: 화이트 → 블루 그라데이션, 은은한 라인 */
-.hero-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 40%, #e0eef9 100%);
+/* ——— 배경: 은은한 애니메이션 그라데이션 + 블러 + 미세 패턴 ——— */
+.bg-premium {
+  background: linear-gradient(
+    160deg,
+    var(--gradient-hero-start) 0%,
+    var(--gradient-hero-mid) 40%,
+    var(--gradient-hero-end) 100%
+  );
 }
 
-.hero-pattern {
+.bg-premium-pattern {
   background-image:
     linear-gradient(rgba(30, 58, 95, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(30, 58, 95, 0.03) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
-/* 로고 우측 상단 파티클 느낌의 은은한 점들 */
+/* 글로우 오버레이 (Hero 등) */
+.glow-overlay {
+  background: var(--gradient-glow);
+  pointer-events: none;
+}
+
+/* 글래스 카드 */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--glass-shadow);
+}
+
+/* 버튼: hover 확대/광택 */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-300;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
+}
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.35);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-300 border-2;
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-secondary:hover {
+  transform: scale(1.03);
+  background: var(--accent-light);
+  box-shadow: 0 4px 16px rgba(30, 58, 95, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+
+/* ——— 유틸: 기존 호환 ——— */
+.hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 40%, #e0eef9 100%);
+}
+.hero-pattern {
+  background-image:
+    linear-gradient(rgba(30, 58, 95, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 95, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
 .hero-particles {
   pointer-events: none;
 }
@@ -50,29 +158,64 @@ body {
   animation: particle-float 8s ease-in-out infinite;
 }
 @keyframes particle-float {
-  0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
-  50% { opacity: 0.7; transform: translate(6px, -8px) scale(1.1); }
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(6px, -8px) scale(1.1);
+  }
 }
 
-/* 이미지·카드 생동감: 부드러운 플로팅 */
+/* 히어로 패널 안 파티클 점: 떠다니는 움직임 */
+.hero-particles-dot {
+  animation: hero-dot-float 6s ease-in-out infinite;
+}
+@keyframes hero-dot-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.9;
+  }
+  33% {
+    transform: translate(4px, -6px) scale(1.15);
+    opacity: 1;
+  }
+  66% {
+    transform: translate(-3px, 4px) scale(0.95);
+    opacity: 0.85;
+  }
+}
+
 .img-float {
   animation: img-float 6s ease-in-out infinite;
 }
 @keyframes img-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-10px) scale(1.02); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
 }
-
 .img-float-slow {
   animation: img-float-slow 8s ease-in-out infinite;
 }
 @keyframes img-float-slow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-6px) rotate(0.5deg); }
-  66% { transform: translateY(-4px) rotate(-0.3deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-0.3deg);
+  }
 }
-
-/* 카드 호버 시 살짝 들리기 */
 .card-lift {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -80,12 +223,17 @@ body {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px -8px rgba(30, 58, 95, 0.15);
 }
-
-/* 은은한 글로우 맥동 */
 .glow-pulse {
   animation: glow-pulse 4s ease-in-out infinite;
 }
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.6; filter: blur(24px); }
-  50% { opacity: 0.9; filter: blur(28px); }
+  0%,
+  100% {
+    opacity: 0.6;
+    filter: blur(24px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(28px);
+  }
 }

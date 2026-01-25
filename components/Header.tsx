@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "회사 소개", href: "/#about", hash: "about" },
-  { label: "컨설팅 서비스", href: "/#data-compliance", hash: "data-compliance" },
+  { label: "사업 소개", href: "/#business", hash: "business" },
+  { label: "컨설팅", href: "/#consulting", hash: "consulting" },
   { label: "내친구 버디", href: "/#mybuddy", hash: "mybuddy" },
   { label: "문의하기", href: "/#contact", hash: "contact" },
 ];
@@ -17,15 +17,15 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: (typeof navItems)[0]) => {
-    if (item.hash && pathname === "/") {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname === "/") {
       e.preventDefault();
-      const el = document.getElementById(item.hash);
+      const el = document.getElementById(hash);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
@@ -33,9 +33,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
+        scrolled ? "glass-card shadow-soft py-0" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -49,13 +47,13 @@ export default function Header() {
             priority
           />
         </Link>
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-6 md:gap-8" aria-label="주요 메뉴">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item)}
-              className="text-sm text-gray-700 hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, item.hash)}
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
             >
               {item.label}
             </Link>

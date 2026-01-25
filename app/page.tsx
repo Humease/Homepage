@@ -1,23 +1,23 @@
 import { HeroSection } from "@/components/HeroSection";
-import { PhilosophySection } from "@/components/PhilosophySection";
-import { BusinessOverviewSection } from "@/components/BusinessOverviewSection";
-import { DCSection } from "@/components/DCSection";
-import { MyBuddySection } from "@/components/MyBuddySection";
+import { BusinessTabsSection } from "@/components/BusinessTabsSection";
 import { TrustSection } from "@/components/TrustSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ContactSection } from "@/components/ContactSection";
+import { ConsultingTimelineSection } from "@/components/ConsultingTimelineSection";
+import { BuddyChatSection } from "@/components/BuddyChatSection";
+import { ScenarioSection } from "@/components/ScenarioSection";
+import { FAQSection } from "@/components/FAQSection";
+import { ContactFormSection } from "@/components/ContactFormSection";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <PhilosophySection />
-      <BusinessOverviewSection />
-      <DCSection />
-      <MyBuddySection />
+      <BusinessTabsSection />
       <TrustSection />
-      <AboutSection />
-      <ContactSection />
+      <ConsultingTimelineSection />
+      <BuddyChatSection />
+      <ScenarioSection />
+      <FAQSection />
+      <ContactFormSection />
     </>
   );
 }
