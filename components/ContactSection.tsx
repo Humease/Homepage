@@ -1,6 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-gray-50 border-t border-gray-100">
+    <motion.section
+      id="contact"
+      className="py-20 bg-gray-50 border-t border-gray-100"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
+    >
       <div className="max-w-2xl mx-auto px-6">
         <h2 className="text-3xl font-semibold text-primary mb-8">문의하기</h2>
         <div className="space-y-6 text-gray-700">
@@ -30,6 +41,6 @@ export function ContactSection() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

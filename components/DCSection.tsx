@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -26,13 +29,24 @@ const processSteps = [
   "도입 지원 및 운영 컨설팅",
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 export function DCSection() {
   return (
     <div id="data-compliance">
       <section className="bg-gradient-to-b from-primary/5 to-white py-14">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeUp}
+              transition={{ duration: 0.5 }}
+            >
               <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4">
                 컨설팅 서비스
               </h2>
@@ -41,8 +55,15 @@ export function DCSection() {
                 구조와 논리, 책임 있는 수행으로 기업과 공공·금융 고객의 규제 대응을
                 지원합니다.
               </p>
-            </div>
-            <div className="relative w-full max-w-[340px] rounded-xl overflow-hidden border border-gray-100 shadow-sm">
+            </motion.div>
+            <motion.div
+              className="relative w-full max-w-[340px] rounded-xl overflow-hidden border border-gray-100 shadow-sm img-float"
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+            >
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/consulting-service.png`}
                 alt="컨설팅 서비스 – 데이터 프라이버시, 규제, 리스크 평가"
@@ -50,12 +71,19 @@ export function DCSection() {
                 height={191}
                 className="w-full h-auto max-h-52 object-contain"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 border-t border-gray-100">
+      <motion.section
+        className="py-12 border-t border-gray-100"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+        transition={{ duration: 0.4 }}
+      >
         <div className="max-w-4xl mx-auto px-6">
           <h3 className="text-xl font-semibold text-primary mb-3">
             Why Compliance
@@ -66,7 +94,7 @@ export function DCSection() {
             프로세스는 리스크 관리와 신뢰 구축에 필수적입니다.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
@@ -74,19 +102,32 @@ export function DCSection() {
             서비스 영역
           </h3>
           <div className="space-y-6">
-            {services.map((s) => (
-              <div key={s.title}>
+            {services.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+              >
                 <h4 className="text-lg font-medium text-gray-900 mb-1">
                   {s.title}
                 </h4>
                 <p className="text-gray-600 leading-snug">{s.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-12 border-t border-gray-100">
+      <motion.section
+        className="py-12 border-t border-gray-100"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
+        transition={{ duration: 0.4 }}
+      >
         <div className="max-w-4xl mx-auto px-6">
           <h3 className="text-xl font-semibold text-primary mb-4">
             컨설팅 프로세스
@@ -97,21 +138,28 @@ export function DCSection() {
             ))}
           </ol>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-12 bg-primary/5">
+      <motion.section
+        className="py-12 bg-primary/5"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        transition={{ duration: 0.4 }}
+      >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-gray-700 mb-4">
             도입·문의는 아래 문의하기에서 부탁드립니다.
           </p>
           <Link
-            href="/contact"
+            href="/#contact"
             className="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors"
           >
             문의하기
           </Link>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

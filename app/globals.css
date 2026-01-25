@@ -53,3 +53,39 @@ body {
   0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
   50% { opacity: 0.7; transform: translate(6px, -8px) scale(1.1); }
 }
+
+/* 이미지·카드 생동감: 부드러운 플로팅 */
+.img-float {
+  animation: img-float 6s ease-in-out infinite;
+}
+@keyframes img-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+.img-float-slow {
+  animation: img-float-slow 8s ease-in-out infinite;
+}
+@keyframes img-float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-6px) rotate(0.5deg); }
+  66% { transform: translateY(-4px) rotate(-0.3deg); }
+}
+
+/* 카드 호버 시 살짝 들리기 */
+.card-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -8px rgba(30, 58, 95, 0.15);
+}
+
+/* 은은한 글로우 맥동 */
+.glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; filter: blur(24px); }
+  50% { opacity: 0.9; filter: blur(28px); }
+}

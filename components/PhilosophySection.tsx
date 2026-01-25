@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const pillars = [
   {
     title: "컨설팅 서비스",
@@ -16,22 +20,47 @@ const pillars = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
+
 export function PhilosophySection() {
   return (
     <section id="philosophy" className="py-14 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-          {pillars.map((item) => (
-            <div key={item.title} className="space-y-3">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 lg:gap-10"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {pillars.map((pillar) => (
+            <motion.div
+              key={pillar.title}
+              variants={item}
+              className="space-y-3 group"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25 }}
+            >
               <h3 className="text-lg font-semibold text-primary">
-                {item.title}
+                {pillar.title}
               </h3>
               <p className="text-gray-600 leading-snug text-sm">
-                {item.description}
+                {pillar.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

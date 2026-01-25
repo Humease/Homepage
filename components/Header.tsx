@@ -9,7 +9,7 @@ const navItems = [
   { label: "회사 소개", href: "/#about", hash: "about" },
   { label: "컨설팅 서비스", href: "/#data-compliance", hash: "data-compliance" },
   { label: "내친구 버디", href: "/#mybuddy", hash: "mybuddy" },
-  { label: "문의하기", href: "/contact", hash: null },
+  { label: "문의하기", href: "/#contact", hash: "contact" },
 ];
 
 export default function Header() {

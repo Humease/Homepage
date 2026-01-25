@@ -59,8 +59,16 @@ export function HeroSection() {
           {/* 로고와 같은 톤: 밝은 하늘색 → 짙은 블루 그라데이션 */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#e8f8fc] via-[#d0eef9] to-primary/15" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-48 h-48 rounded-full border-2 border-primary/15" />
-            <div className="absolute w-36 h-36 rounded-full bg-[#4dd2ff]/25 blur-2xl" />
+            <motion.div
+              className="w-48 h-48 rounded-full border-2 border-primary/15"
+              animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute w-36 h-36 rounded-full bg-[#4dd2ff]/25 blur-2xl glow-pulse"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
           {/* 은은한 파티클 (로고 상단 점 연상) */}
           <span className="absolute w-2 h-2 top-[20%] right-[28%]" style={{ animationDelay: "0s" }} />

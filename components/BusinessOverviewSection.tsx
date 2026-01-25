@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const dcItems = [
   "아카이빙",
@@ -13,58 +16,89 @@ const buddyItems = [
   "AI 코칭",
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+  }),
+};
+
 export function BusinessOverviewSection() {
   return (
     <section id="services" className="py-14 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-6">
-          {/* 컨설팅 서비스 카드: 구조적/직선/큐브 느낌 */}
-          <Link
-            href="/#data-compliance"
-            className="group block p-6 bg-white border border-gray-200 rounded-lg hover:border-primary/30 hover:shadow-sm transition-all duration-300"
+          <motion.div
+            custom={0}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="flex flex-col gap-3">
-              <div className="w-12 h-1 bg-primary" />
-              <h3 className="text-xl font-semibold text-primary">
-                컨설팅 서비스
-              </h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
-                {dcItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-sm" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <span className="text-sm text-primary font-medium group-hover:underline mt-2">
-                자세히 보기 →
-              </span>
-            </div>
-          </Link>
+            <Link
+              href="/#data-compliance"
+              className="group block p-6 bg-white border border-gray-200 rounded-lg hover:border-primary/30 hover:shadow-lg transition-all duration-300 card-lift"
+            >
+              <div className="flex flex-col gap-3">
+                <motion.div
+                  className="w-12 h-1 bg-primary"
+                  whileHover={{ width: 24 }}
+                  transition={{ duration: 0.25 }}
+                />
+                <h3 className="text-xl font-semibold text-primary">
+                  컨설팅 서비스
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  {dcItems.map((dcItem) => (
+                    <li key={dcItem} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-sm" />
+                      {dcItem}
+                    </li>
+                  ))}
+                </ul>
+                <span className="text-sm text-primary font-medium group-hover:underline mt-2 inline-block group-hover:translate-x-1 transition-transform">
+                  자세히 보기 →
+                </span>
+              </div>
+            </Link>
+          </motion.div>
 
-          {/* 내친구 버디 카드: 부드러운 블루/곡선 */}
-          <Link
-            href="/#mybuddy"
-            className="group block p-6 bg-gradient-to-br from-accent-light to-white border border-accent/20 rounded-lg hover:border-accent/40 hover:shadow-sm transition-all duration-300"
+          <motion.div
+            custom={1}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="flex flex-col gap-3">
-              <div className="w-12 h-1 rounded-full bg-accent" />
-              <h3 className="text-xl font-semibold text-primary">
-                내친구 버디
-              </h3>
-              <ul className="space-y-2 text-gray-600 text-sm">
-                {buddyItems.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <span className="text-sm text-primary font-medium group-hover:underline mt-2">
-                자세히 보기 →
-              </span>
-            </div>
-          </Link>
+            <Link
+              href="/#mybuddy"
+              className="group block p-6 bg-gradient-to-br from-accent-light to-white border border-accent/20 rounded-lg hover:border-accent/40 hover:shadow-lg transition-all duration-300 card-lift"
+            >
+              <div className="flex flex-col gap-3">
+                <motion.div
+                  className="w-12 h-1 rounded-full bg-accent"
+                  whileHover={{ width: 24 }}
+                  transition={{ duration: 0.25 }}
+                />
+                <h3 className="text-xl font-semibold text-primary">
+                  내친구 버디
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  {buddyItems.map((buddyItem) => (
+                    <li key={buddyItem} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-accent rounded-full" />
+                      {buddyItem}
+                    </li>
+                  ))}
+                </ul>
+                <span className="text-sm text-primary font-medium group-hover:underline mt-2 inline-block group-hover:translate-x-1 transition-transform">
+                  자세히 보기 →
+                </span>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
