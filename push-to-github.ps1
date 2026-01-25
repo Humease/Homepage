@@ -4,14 +4,24 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
-# .git이 없거나 깨졌을 수 있으므로 항상 init 시도 (이미 정상이면 "Reinitialized"만 출력)
-git init 2>$null
+# 이전 Git 작업이 남긴 잠금 파일 제거 (could not lock config file 오류 방지)
+foreach ($lock in @(".git\config.lock", ".git\index.lock")) {
+    if (Test-Path $lock) {
+        Remove-Item -Force $lock -ErrorAction SilentlyContinue
+        Write-Host "잠금 제거: $lock" -ForegroundColor Yellow
+    }
+}
+
+# 이미 유효한 Git 저장소면 init 건너뛰기 (config 잠금 오류 방지)
 $valid = (git rev-parse --is-inside-work-tree 2>$null) -eq "true"
 if (-not $valid) {
     if (Test-Path .git) { Remove-Item -Recurse -Force .git }
     git init
 }
-git branch -M main
+$errPrev = $ErrorActionPreference
+$ErrorActionPreference = "SilentlyContinue"
+git branch -M main 2>$null
+$ErrorActionPreference = $errPrev
 
 $errPrev = $ErrorActionPreference
 $ErrorActionPreference = "SilentlyContinue"
@@ -41,7 +51,8 @@ $ErrorActionPreference = "SilentlyContinue"
 git fetch origin 2>$null
 $ErrorActionPreference = $errPrev
 # 충돌 시 로컬(우리) 버전 우선 적용 (-X ours)하여 병합 완료
-git pull origin main --allow-unrelated-histories --no-edit -X ours
+git pull origin main --allow-unrelated-histories --no-edit -X ours 2>$null
 git push -u origin main
+# 푸시 거부 시: GitHub PAT에 'workflow' 권한 필요 (Settings → Developer settings → Personal access tokens)
 
 Write-Host "`n완료: https://github.com/Humease/Homepage" -ForegroundColor Green
