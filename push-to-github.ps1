@@ -35,6 +35,12 @@ $ErrorActionPreference = $errPrev
 if ($short -or $isNew) {
     git commit -m $(if ($isNew) { "Initial commit: 휴미즈 홈페이지" } else { "Update: 휴미즈 홈페이지" })
 }
+# 원격에만 있는 커밋(GitHub README 등)이 있으면 먼저 가져와서 합침
+$errPrev = $ErrorActionPreference
+$ErrorActionPreference = "SilentlyContinue"
+git fetch origin 2>$null
+$ErrorActionPreference = $errPrev
+git pull origin main --allow-unrelated-histories --no-edit
 git push -u origin main
 
 Write-Host "`n완료: https://github.com/Humease/Homepage" -ForegroundColor Green
