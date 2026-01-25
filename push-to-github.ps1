@@ -50,8 +50,11 @@ $errPrev = $ErrorActionPreference
 $ErrorActionPreference = "SilentlyContinue"
 git fetch origin 2>$null
 $ErrorActionPreference = $errPrev
-# 충돌 시 로컬(우리) 버전 우선 적용 (-X ours)하여 병합 완료
-git pull origin main --allow-unrelated-histories --no-edit -X ours 2>$null
+# 충돌 시 로컬(우리) 버전 우선 적용 (-X ours)하여 병합 완료 (Git이 stderr로 출력해도 스크립트가 멈추지 않도록 처리)
+$errPrev = $ErrorActionPreference
+$ErrorActionPreference = "SilentlyContinue"
+git pull origin main --allow-unrelated-histories --no-edit -X ours 2>&1 | Out-Null
+$ErrorActionPreference = $errPrev
 git push -u origin main
 # 푸시 거부 시: GitHub PAT에 'workflow' 권한 필요 (Settings → Developer settings → Personal access tokens)
 
