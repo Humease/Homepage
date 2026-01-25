@@ -1,0 +1,54 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 휴미즈 로고 블루 톤: 짙은 남색 ~ 밝은 하늘색 그라데이션 */
+:root {
+  --primary: #1e3a5f;
+  --primary-light: #2d5a8a;
+  --primary-navy: #28375c;
+  --accent: #4dd2ff;
+  --accent-mid: #0088cc;
+  --accent-soft: #7eb8da;
+  --accent-light: #e8f4fc;
+  --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-pretendard);
+  background: #fff;
+  color: #1a1a1a;
+}
+
+/* Hero 배경: 화이트 → 블루 그라데이션, 은은한 라인 */
+.hero-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 40%, #e0eef9 100%);
+}
+
+.hero-pattern {
+  background-image:
+    linear-gradient(rgba(30, 58, 95, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 95, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* 로고 우측 상단 파티클 느낌의 은은한 점들 */
+.hero-particles {
+  pointer-events: none;
+}
+.hero-particles span {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(77, 210, 255, 0.35);
+  animation: particle-float 8s ease-in-out infinite;
+}
+@keyframes particle-float {
+  0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
+  50% { opacity: 0.7; transform: translate(6px, -8px) scale(1.1); }
+}
