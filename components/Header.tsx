@@ -31,7 +31,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-0 shrink-0" aria-label="휴미즈 홈">
           <Image
-            src="/logo.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.png`}
             alt="휴미즈"
             width={140}
             height={40}

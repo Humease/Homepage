@@ -44,7 +44,7 @@ export function DCSection() {
             </div>
             <div className="relative w-full max-w-[340px] rounded-xl overflow-hidden border border-gray-100 shadow-sm">
               <Image
-                src="/consulting-service.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/consulting-service.png`}
                 alt="컨설팅 서비스 – 데이터 프라이버시, 규제, 리스크 평가"
                 width={340}
                 height={191}

@@ -19,7 +19,7 @@ export function MyBuddySection() {
             </div>
             <div className="relative w-full max-w-[320px] rounded-xl overflow-hidden border border-accent/20 shadow-sm">
               <Image
-                src="/mybuddy.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/mybuddy.png`}
                 alt="내친구 버디 – 가족과 함께하는 AI 동반자, 대화와 추천"
                 width={320}
                 height={213}
