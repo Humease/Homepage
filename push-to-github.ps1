@@ -40,7 +40,8 @@ $errPrev = $ErrorActionPreference
 $ErrorActionPreference = "SilentlyContinue"
 git fetch origin 2>$null
 $ErrorActionPreference = $errPrev
-git pull origin main --allow-unrelated-histories --no-edit
+# 충돌 시 로컬(우리) 버전 우선 적용 (-X ours)하여 병합 완료
+git pull origin main --allow-unrelated-histories --no-edit -X ours
 git push -u origin main
 
 Write-Host "`n완료: https://github.com/Humease/Homepage" -ForegroundColor Green
