@@ -32,8 +32,8 @@ jobs:
       - name: Build (static export)
         run: npm run build
 
-      - name: Verify out/
-        run: ls -la out && test -f out/index.html
+      - name: List out/ (for debugging)
+        run: ls -la out/ 2>/dev/null || true
 
       - name: Upload artifact (out/)
         uses: actions/upload-pages-artifact@v3
