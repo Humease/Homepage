@@ -8,10 +8,10 @@ import { buddyChatData } from "@/lib/data";
 const TYPING_SPEED_MS = 50;
 const PAUSE_AFTER_MESSAGE_MS = 1200;
 
+type ChatMessage = { role: string; text: string; revealed: boolean };
+
 export function BuddyChatSection() {
-  const [visibleMessages, setVisibleMessages] = useState<
-    { role: string; text: string; revealed: boolean }[]
-  >([]);
+  const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayedLength, setDisplayedLength] = useState(0);
   const reduceMotion = useReducedMotion();
@@ -57,9 +57,9 @@ export function BuddyChatSection() {
     }
   }, [currentIndex, displayedLength, messages, visibleMessages.length]);
 
-  const displayList =
+  const displayList: { role: string; text: string; revealed: boolean }[] =
     reduceMotion
-      ? messages
+      ? messages.map((m) => ({ ...m, revealed: true }))
       : visibleMessages.length
         ? visibleMessages
         : messages.length
