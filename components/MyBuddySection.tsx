@@ -17,12 +17,12 @@ export function MyBuddySection() {
                 신뢰와 따뜻함, 과학적 설계를 우선합니다.
               </p>
             </div>
-            <div className="relative w-full max-w-[280px] rounded-xl overflow-hidden border border-accent/20 shadow-sm">
+            <div className="relative w-full max-w-[320px] rounded-xl overflow-hidden border border-accent/20 shadow-sm">
               <Image
                 src="/mybuddy.png"
                 alt="내친구 버디 – 가족과 함께하는 AI 동반자, 대화와 추천"
-                width={280}
-                height={187}
+                width={320}
+                height={213}
                 className="w-full h-auto max-h-52 object-contain"
               />
             </div>
