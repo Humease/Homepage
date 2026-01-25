@@ -18,15 +18,15 @@ const pillars = [
 
 export function PhilosophySection() {
   return (
-    <section id="philosophy" className="py-20 bg-white">
+    <section id="philosophy" className="py-14 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
           {pillars.map((item) => (
-            <div key={item.title} className="space-y-4">
+            <div key={item.title} className="space-y-3">
               <h3 className="text-lg font-semibold text-primary">
                 {item.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <p className="text-gray-600 leading-snug text-sm">
                 {item.description}
               </p>
             </div>

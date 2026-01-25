@@ -1,5 +1,28 @@
 # GitHub Push 가이드
 
+## Cursor 터미널에서 푸시하기
+
+Cursor 내부 터미널에서는 Git 쓰기/네트워크 제한으로 `.\push-to-github.ps1`이 실패할 수 있습니다. 아래 중 하나를 사용하세요.
+
+### 방법 A: Cursor에서 한 번에 실행 (권장)
+
+**새 PowerShell 창**을 띄워 그곳에서 푸시하는 스크립트를 실행합니다. 푸시는 Cursor 밖에서 동작해 성공합니다.
+
+```powershell
+.\push-to-github-cursor.ps1
+```
+
+위 명령을 Cursor 터미널에서 실행하면 새 창이 열리고, 그 창에서 자동으로 `push-to-github.ps1`이 실행됩니다. 완료 후 창은 그대로 두거나 닫으면 됩니다.
+
+### 방법 B: Cursor 터미널에서 직접 시도할 때
+
+1. **소스 제어** 패널에서 진행 중인 작업이 있으면 완료하거나 취소하기 (다른 Git 프로세스 잠금 방지)
+2. **새 터미널** 열기 (Ctrl+Shift+`) 후 `cd d:\VibeCoding\Homepage` 로 이동
+3. `.\push-to-github.ps1` 실행 시 **권한 요청**이 뜨면 **Allow** 또는 **All** 선택
+4. 그래도 실패하면 방법 A 사용 또는 Windows에서 PowerShell을 따로 열어 실행
+
+---
+
 ## 1. GitHub에 새 저장소 만들기
 
 1. [GitHub](https://github.com) 로그인 후 **New repository** 클릭

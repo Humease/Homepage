@@ -6,7 +6,7 @@ import Link from "next/link";
 export function HeroSection() {
   return (
     <section id="hero" className="hero-gradient hero-pattern min-h-[85vh] flex items-center">
-      <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
         <div>
           <motion.p
             className="text-2xl md:text-3xl font-semibold text-primary leading-tight"
@@ -19,7 +19,7 @@ export function HeroSection() {
             사람을 위한 인텔리전스.
           </motion.p>
           <motion.p
-            className="mt-6 text-gray-600 leading-relaxed"
+            className="mt-4 text-gray-600 leading-snug"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -31,7 +31,7 @@ export function HeroSection() {
             신뢰 가능한 기술의 기준을 만듭니다.
           </motion.p>
           <motion.div
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-6 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

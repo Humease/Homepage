@@ -24,6 +24,7 @@ body {
   font-family: var(--font-pretendard);
   background: #fff;
   color: #1a1a1a;
+  line-height: 1.5;
 }
 
 /* Hero 배경: 화이트 → 블루 그라데이션, 은은한 라인 */

@@ -3,22 +3,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "회사소개", href: "/#about" },
-  { label: "컨설팅 서비스", href: "/#data-compliance" },
-  { label: "내친구 버디", href: "/#mybuddy" },
-  { label: "문의하기", href: "/#contact" },
+  { label: "회사 소개", href: "/#about", hash: "about" },
+  { label: "컨설팅 서비스", href: "/#data-compliance", hash: "data-compliance" },
+  { label: "내친구 버디", href: "/#mybuddy", hash: "mybuddy" },
+  { label: "문의하기", href: "/contact", hash: null },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: (typeof navItems)[0]) => {
+    if (item.hash && pathname === "/") {
+      e.preventDefault();
+      const el = document.getElementById(item.hash);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <header
@@ -44,6 +54,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item)}
               className="text-sm text-gray-700 hover:text-primary transition-colors"
             >
               {item.label}
