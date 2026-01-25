@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
-// 배포(GitHub Pages 등)에서만 /Homepage 사용, 로컬 개발 시에는 루트(/)로 동작
-const basePath =
-  process.env.NODE_ENV === "production" ? "/Homepage" : "";
+// 커스텀 도메인(www.humease.com) 루트에서 서비스 → basePath 없음
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",
