@@ -1,4 +1,5 @@
-# 현재 변경사항 커밋 후 푸시 (Cursor 종료 후 실행 권장)
+# 현재 변경사항 커밋 후 푸시
+# ※ Lock 오류 방지: Cursor를 종료한 뒤 이 스크립트를 실행하세요.
 Set-Location $PSScriptRoot
 
 foreach ($lock in @(".git\config.lock", ".git\index.lock")) {
@@ -8,7 +9,7 @@ foreach ($lock in @(".git\config.lock", ".git\index.lock")) {
     }
 }
 
-$msg = "Animations, 404, dev basePath, about single para, meta title"
+$msg = "Content update: hero, consulting, why compliance, about, footer"
 git add -A
 $status = git status --short
 if (-not $status) {

@@ -16,7 +16,7 @@ export function HeroSection() {
           >
             데이터를 이해하는 기술,
             <br />
-            사람을 위한 인텔리전스.
+            사람을 위한 인텔리전스
           </motion.p>
           <motion.p
             className="mt-4 text-gray-600 leading-snug"
@@ -24,11 +24,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           >
-            휴미즈는 데이터 컴플라이언스와
+            휴미즈는 컨설팅 서비스와 AI 기반 가족 코칭 서비스를 통해
             <br />
-            AI 기반 가족 서비스를 통해
-            <br />
-            신뢰 가능한 기술의 기준을 만듭니다.
+            사람이 느끼는 불편함을 기술로 해결하고, 일상을 더 편리하게 만듭니다.
           </motion.p>
           <motion.div
             className="mt-6 flex flex-wrap gap-4"

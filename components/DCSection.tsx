@@ -51,9 +51,10 @@ export function DCSection() {
                 컨설팅 서비스
               </h2>
               <p className="text-lg text-gray-700 leading-snug">
-                데이터 컴플라이언스와 전자증거(eDiscovery)·아카이빙·거버넌스 분야에서
-                구조와 논리, 책임 있는 수행으로 기업과 공공·금융 고객의 규제 대응을
-                지원합니다.
+                아카이빙, eDiscovery, 데이터 관리, 거버넌스 전반에 걸친 IT 컨설팅 서비스를 제공합니다.
+              </p>
+              <p className="text-lg text-gray-700 leading-snug mt-3">
+                기업 및 공공·금융 조직이 데이터를 체계적으로 관리하고, 내부 통제와 각종 규제 요구 사항을 충족할 수 있도록 전략 수립부터 설계, 구축, 운영까지 책임 있게 지원합니다.
               </p>
             </motion.div>
             <motion.div
@@ -89,9 +90,7 @@ export function DCSection() {
             Why Compliance
           </h3>
           <p className="text-gray-700 leading-snug">
-            금융·공공·대기업을 중심으로 데이터 보존 의무, 전자증거 제출 요구,
-            개인정보·보안 규제가 강화되고 있습니다. 올바른 아카이빙과 eDiscovery
-            프로세스는 리스크 관리와 신뢰 구축에 필수적입니다.
+            금융, 공공, 대기업을 중심으로 데이터 보존 의무와 전자증거(eDiscovery) 제출 요구, 개인정보 보호 규제가 지속적으로 강화되고 있습니다. 이제 컴플라이언스는 단순한 법적 대응을 넘어, 기업의 신뢰와 지속 가능성을 좌우하는 핵심 요소가 되었습니다. 체계적인 아카이빙과 eDiscovery, 명확한 데이터 관리와 거버넌스 없이는 감사·소송·규제 대응 과정에서 큰 리스크가 발생할 수 있습니다. 올바른 컴플라이언스 체계는 리스크를 줄이고, 조직의 책임성과 신뢰를 높이는 기반이 됩니다.
           </p>
         </div>
       </motion.section>
@@ -150,7 +149,7 @@ export function DCSection() {
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-gray-700 mb-4">
-            도입·문의는 아래 문의하기에서 부탁드립니다.
+            컨설팅 서비스 관련 문의는 아래 버튼을 통해 편하게 연락해 주세요.
           </p>
           <Link
             href="/#contact"

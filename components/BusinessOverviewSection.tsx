@@ -4,16 +4,17 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const dcItems = [
-  "아카이빙",
-  "eDiscovery",
-  "규제 대응",
-  "컨설팅 & 라이선스",
+  "아카이빙 및 이디스커버리",
+  "내부 통제 및 관리 체계 수립",
+  "개인정보보호법 등 주요 규제 대응",
+  "다양한 라이선스 컨설팅 지원",
 ];
 
 const buddyItems = [
   "아이 대화 기록",
   "부모 요약",
   "AI 코칭",
+  "성장 리포트",
 ];
 
 const cardVariants = {

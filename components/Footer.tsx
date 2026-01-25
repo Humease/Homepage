@@ -8,8 +8,9 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-gray-900">주식회사 휴미즈</p>
             <p className="mt-1.5 text-sm text-gray-600 max-w-md leading-snug">
-              기업과 가정의 지속 가능한 성장을 위한 컨설팅과 가족 중심 디지털
-              서비스(내친구 버디)로, 신뢰·안전·사람 중심의 경험을 만들어갑니다.
+              휴미즈는 IT 기술을 통해 사람의 일상이 더 편리해지도록 돕습니다.
+              <br />
+              기업과 가정이 함께 성장하고 행복해질 수 있는 환경을 만들어갑니다.
             </p>
           </div>
           <div className="flex flex-col gap-2">
