@@ -66,13 +66,14 @@ git commit -m "Update: 로고 및 스타일 반영"
 git push origin main
 ```
 
-## 3. GitHub Pages 설정
+## 3. GitHub Pages 설정 (필수)
 
-Push 후 GitHub 저장소에서:
+이 저장소는 **GitHub Actions**로 배포합니다. Push 후 반드시 아래와 같이 맞춰야 합니다.
 
 1. **Settings** → **Pages**
-2. **Source**: Deploy from a branch
-3. **Branch**: `main` (또는 `gh-pages` 사용 시 해당 브랜치), 폴더 **/ (root)** 또는 **/docs**
-4. **Save**
+2. **Build and deployment** > **Source** 에서 **GitHub Actions** 선택
+3. **Save**
 
-정적 사이트는 `npm run build` 후 `out/` 폴더 내용을 해당 브랜치/폴더에 올리거나, GitHub Actions로 자동 배포하는 방식이 필요합니다.
+> ⚠️ **"Deploy from a branch"** 를 선택한 상태면 이 워크플로는 동작하지 않습니다. 반드시 **GitHub Actions** 로 바꾸세요.
+
+정적 사이트는 `main` 푸시 시 `.github/workflows/deploy-pages.yml` 이 빌드 후 `out/` 을 업로드하고, deploy-pages 가 Pages 에 배포합니다.
