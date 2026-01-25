@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="hero-gradient hero-pattern min-h-[85vh] flex items-center">
+    <section id="hero" className="hero-gradient hero-pattern min-h-[85vh] flex items-center">
       <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <motion.p
@@ -37,13 +37,13 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
             <Link
-              href="/business/dc"
+              href="/#data-compliance"
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white text-sm font-medium rounded-lg hover:bg-primary-light transition-colors"
             >
-              DC 컨설팅 알아보기
+              컨설팅 서비스 알아보기
             </Link>
             <Link
-              href="/business/mybuddy"
+              href="/#mybuddy"
               className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-primary text-primary text-sm font-medium rounded-lg hover:bg-accent-light transition-colors"
             >
               내친구 버디 보기

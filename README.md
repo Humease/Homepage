@@ -54,7 +54,7 @@ npm run build
 |------|------|
 | `/` | 메인 (Hero, Philosophy, Business, Trust) |
 | `/about` | 회사 소개 |
-| `/business/dc` | DC 컨설팅 |
+| `/business/dc` | 컨설팅 서비스 |
 | `/business/mybuddy` | 내친구 버디 |
 | `/contact` | 문의 |
 | `/privacy` | 개인정보 처리방침 |

@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "회사소개", href: "/about" },
-  { label: "DC 컨설팅", href: "/business/dc" },
-  { label: "내친구 버디", href: "/business/mybuddy" },
-  { label: "문의하기", href: "/contact" },
+  { label: "회사소개", href: "/#about" },
+  { label: "컨설팅 서비스", href: "/#data-compliance" },
+  { label: "내친구 버디", href: "/#mybuddy" },
+  { label: "문의하기", href: "/#contact" },
 ];
 
 export default function Header() {

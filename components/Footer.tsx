@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <Link
-              href="/contact"
+              href="/#contact"
               className="text-sm text-primary hover:underline"
             >
               이메일 · 문의

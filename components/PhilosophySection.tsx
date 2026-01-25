@@ -1,6 +1,6 @@
 const pillars = [
   {
-    title: "Data Compliance",
+    title: "컨설팅 서비스",
     description:
       "데이터의 수집, 보관, 활용 전 과정에 걸친 규제 이해와 체계적 대응으로 조직의 리스크를 낮추고 신뢰를 쌓습니다.",
   },
@@ -18,7 +18,7 @@ const pillars = [
 
 export function PhilosophySection() {
   return (
-    <section className="py-20 bg-white">
+    <section id="philosophy" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
           {pillars.map((item) => (

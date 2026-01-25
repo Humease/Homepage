@@ -15,18 +15,18 @@ const buddyItems = [
 
 export function BusinessOverviewSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* DC 컨설팅 카드: 구조적/직선/큐브 느낌 */}
+          {/* 컨설팅 서비스 카드: 구조적/직선/큐브 느낌 */}
           <Link
-            href="/business/dc"
+            href="/#data-compliance"
             className="group block p-8 bg-white border border-gray-200 rounded-lg hover:border-primary/30 hover:shadow-sm transition-all duration-300"
           >
             <div className="flex flex-col gap-4">
               <div className="w-12 h-1 bg-primary" />
               <h3 className="text-xl font-semibold text-primary">
-                DC 컨설팅
+                컨설팅 서비스
               </h3>
               <ul className="space-y-2 text-gray-600 text-sm">
                 {dcItems.map((item) => (
@@ -44,7 +44,7 @@ export function BusinessOverviewSection() {
 
           {/* 내친구 버디 카드: 부드러운 블루/곡선 */}
           <Link
-            href="/business/mybuddy"
+            href="/#mybuddy"
             className="group block p-8 bg-gradient-to-br from-accent-light to-white border border-accent/20 rounded-lg hover:border-accent/40 hover:shadow-sm transition-all duration-300"
           >
             <div className="flex flex-col gap-4">

@@ -151,7 +151,7 @@ AI 기반 가족 서비스를 통해
 
 **3 Column 구조**
 
-1. Data Compliance
+1. 컨설팅 서비스
     
 2. AI Intelligence
     
