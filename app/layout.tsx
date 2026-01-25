@@ -12,12 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "휴미즈 Humease | 데이터 컴플라이언스 & AI 가족 서비스",
+  title: "주식회사 휴미즈 홈페이지 오신 것을 환영합니다.",
   description:
-    "데이터를 이해하는 기술, 사람을 위한 인텔리전스. 데이터 컴플라이언스와 AI 기반 가족 서비스를 통해 신뢰 가능한 기술의 기준을 만듭니다.",
+    "주식회사 휴미즈 홈페이지 오신 것을 환영합니다. 데이터 컴플라이언스와 AI 기반 가족 서비스를 통해 신뢰 가능한 기술의 기준을 만듭니다.",
   openGraph: {
-    title: "휴미즈 Humease",
-    description: "데이터 컴플라이언스 & AI 기반 가족 서비스",
+    title: "주식회사 휴미즈 홈페이지 오신 것을 환영합니다.",
+    description: "주식회사 휴미즈 홈페이지 오신 것을 환영합니다.",
   },
 };
 
