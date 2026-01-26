@@ -71,6 +71,15 @@ body {
   line-height: 1.6;
 }
 
+/* 모바일 헤더 네비 가로 스크롤 시 스크롤바 숨김 */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* ——— 배경: 은은한 애니메이션 그라데이션 + 블러 + 미세 패턴 ——— */
 .bg-premium {
   background: linear-gradient(

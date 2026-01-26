@@ -36,24 +36,24 @@ export default function Header() {
         scrolled ? "glass-card shadow-soft py-0" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-0 shrink-0" aria-label="휴미즈 홈">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+        <Link href="/" className="flex items-center shrink-0" aria-label="휴미즈 홈">
           <Image
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.png`}
             alt="휴미즈"
             width={140}
             height={40}
-            className="h-[2.25rem] w-auto object-contain object-left"
+            className="h-7 w-auto object-contain object-left sm:h-[2.25rem]"
             priority
           />
         </Link>
-        <nav className="flex items-center gap-6 md:gap-8" aria-label="주요 메뉴">
+        <nav className="flex items-center gap-2 sm:gap-4 md:gap-8 min-w-0 overflow-x-auto overflow-y-hidden py-1 -mx-1 scrollbar-none" aria-label="주요 메뉴">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.hash)}
-              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md"
+              className="text-xs font-medium text-gray-700 hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md whitespace-nowrap sm:text-sm"
             >
               {item.label}
             </Link>

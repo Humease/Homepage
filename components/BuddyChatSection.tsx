@@ -57,14 +57,13 @@ export function BuddyChatSection() {
     }
   }, [currentIndex, displayedLength, messages, visibleMessages.length]);
 
-  const displayList: { role: string; text: string; revealed: boolean }[] =
-    reduceMotion
-      ? messages.map((m) => ({ ...m, revealed: true }))
-      : visibleMessages.length
-        ? visibleMessages
-        : messages.length
-          ? [{ role: messages[0].role, text: "", revealed: false }]
-          : [];
+  const displayList: ChatMessage[] = reduceMotion
+    ? messages.map((m): ChatMessage => ({ ...m, revealed: true }))
+    : visibleMessages.length
+      ? visibleMessages
+      : messages.length
+        ? [{ role: messages[0].role, text: "", revealed: false }]
+        : [];
 
   return (
     <SectionReveal id="mybuddy" className="py-20 md:py-24 bg-premium bg-premium-pattern">
