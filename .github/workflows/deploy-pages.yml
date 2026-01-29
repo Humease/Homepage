@@ -32,9 +32,16 @@ jobs:
           npm install
 
       - name: Build (static export)
+        id: build
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-        run: npm run build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log
+
+      - name: Show build log on failure
+        if: failure() && steps.build.outcome == 'failure'
+        run: echo "=== Last 120 lines of build output ===" && tail -120 build.log
 
       - name: Verify out/
         run: ls -la out/ && test -f out/index.html
