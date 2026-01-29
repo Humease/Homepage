@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm install --prefer-offline --no-audit
 
+      - name: Ensure Next.js SWC for Linux
+        run: npm install @next/swc-linux-x64-gnu --no-save
+
       - name: Build (static export)
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
