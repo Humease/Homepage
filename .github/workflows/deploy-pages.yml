@@ -21,22 +21,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: npm install --prefer-offline --no-audit
-
-      - name: Add Linux SWC to lockfile only (avoid Next lockfile patch)
-        run: npm install --package-lock-only @next/swc-linux-x64-gnu@15.5.7
+        run: pnpm install
 
       - name: Build (static export)
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
-        run: npm run build
+        run: pnpm run build
 
       - name: Verify out/
         run: ls -la out/ && test -f out/index.html
