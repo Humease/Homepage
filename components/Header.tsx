@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "사업 소개", href: "/#business", hash: "business" },
   { label: "컨설팅", href: "/#consulting", hash: "consulting" },
-  { label: "내친구 버디", href: "/#mybuddy", hash: "mybuddy" },
+  { label: "AI 친구", href: "/#mybuddy", hash: "mybuddy" },
   { label: "문의하기", href: "/#contact", hash: "contact" },
 ];
 

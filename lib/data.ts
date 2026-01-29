@@ -7,16 +7,16 @@
 export const heroData = {
   headline: "데이터를 이해하는 기술,\n사람을 위한 인텔리전스",
   subline:
-    "휴미즈는 기업 컨설팅과 AI 기반 가족 서비스 '내친구 버디'를 통해\n불편함을 기술로 해결하고, 일상을 더 따뜻하고 편리하게 만듭니다.",
+    "휴미즈는 기업 컨설팅과 AI 기반 가족 서비스 'AI 친구'를 통해\n불편함을 기술로 해결하고, 일상을 더 따뜻하고 편리하게 만듭니다.",
   ctaConsulting: { label: "컨설팅 문의", href: "/#contact", anchor: "contact" },
-  ctaBuddy: { label: "버디 체험", href: "/#mybuddy", anchor: "mybuddy" },
+  ctaBuddy: { label: "AI 친구 체험", href: "/#mybuddy", anchor: "mybuddy" },
 };
 
 // ——— 사업 2개 (탭/카드) ———
 export const businessTabsData = {
   tabs: [
     { id: "consulting", label: "기업 컨설팅", short: "컨설팅" },
-    { id: "mybuddy", label: "내친구 버디", short: "버디" },
+    { id: "mybuddy", label: "AI 친구", short: "AI 친구" },
   ],
   consulting: {
     title: "기업 컨설팅 서비스",
@@ -27,11 +27,11 @@ export const businessTabsData = {
     ctaHref: "/#consulting",
   },
   mybuddy: {
-    title: "내친구 버디 (My Buddy)",
+    title: "AI 친구",
     description:
       "가족과 아이를 위한 AI 기반 디지털 친구. 대화와 활동 추천으로 따뜻한 동반자를 제공합니다. 부모·아이 모두를 위한 안전하고 유익한 경험을 설계합니다.",
     features: ["대화형 AI", "활동 추천", "가족 단위 사용", "안전·윤리 설계"],
-    ctaText: "버디 체험",
+    ctaText: "AI 친구 체험",
     ctaHref: "/#mybuddy",
   },
 };
@@ -89,9 +89,9 @@ export const consultingTimelineData = {
   ],
 };
 
-// ——— 내친구 버디 채팅 예시 (타이핑 연출용) ———
+// ——— AI 친구 채팅 예시 (타이핑 연출용) ———
 export const buddyChatData = {
-  title: "버디와의 대화 예시",
+  title: "AI 친구와의 대화 예시",
   messages: [
     { role: "user", text: "오늘 날씨 어때?" },
     { role: "assistant", text: "안녕! 오늘은 맑고 따뜻할 거예요. 밖에 나가서 산책하기 좋은 날이에요. 😊" },
@@ -110,13 +110,13 @@ export const scenarioData = {
     {
       id: "parent",
       title: "부모님",
-      description: "버디와의 대화 기록을 확인하고, 아이의 관심사와 활동을 파악할 수 있어요. 안전한 사용 시간과 주제도 설정할 수 있습니다.",
+      description: "AI 친구와의 대화 기록을 확인하고, 아이의 관심사와 활동을 파악할 수 있어요. 안전한 사용 시간과 주제도 설정할 수 있습니다.",
       icon: "👨‍👩‍👧",
     },
     {
       id: "child",
       title: "아이",
-      description: "버디와 대화하고 놀이·퀴즈·책 추천을 받아요. 친구처럼 이야기하면서 재미있게 시간을 보낼 수 있어요.",
+      description: "AI 친구와 대화하고 놀이·퀴즈·책 추천을 받아요. 친구처럼 이야기하면서 재미있게 시간을 보낼 수 있어요.",
       icon: "🧒",
     },
   ],
@@ -134,7 +134,7 @@ export const faqData = {
     },
     {
       id: "buddy-age",
-      question: "내친구 버디는 몇 살부터 사용할 수 있나요?",
+      question: "AI 친구는 몇 살부터 사용할 수 있나요?",
       answer:
         "가족 단위 서비스로, 연령에 맞는 대화와 활동을 제공합니다. 자세한 권장 연령과 기능은 서비스 오픈 시 안내드리겠습니다.",
     },
@@ -156,7 +156,7 @@ export const faqData = {
 // ——— 문의 폼 (mailto용) ———
 export const contactData = {
   title: "문의하기",
-  subtitle: "컨설팅·버디 관련 문의를 남겨 주세요. 빠르게 연락드리겠습니다.",
+  subtitle: "컨설팅·AI 친구 관련 문의를 남겨 주세요. 빠르게 연락드리겠습니다.",
   mailto: "contact@humease.com",
   fields: {
     name: { label: "이름", name: "name", type: "text", required: true },

@@ -81,7 +81,7 @@ export function BuddyChatSection() {
         >
           <div className="p-4 border-b border-gray-200/60 flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-green-500/80" />
-            <span className="text-sm text-gray-500">내친구 버디</span>
+            <span className="text-sm text-gray-500">AI 친구</span>
           </div>
           <div className="p-6 space-y-4 min-h-[260px]">
             {displayList.map((m, i) => (

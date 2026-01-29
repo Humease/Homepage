@@ -23,7 +23,7 @@ export function MyBuddySection() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4">
-                내친구 버디
+                AI 친구
               </h2>
               <p className="text-lg text-gray-700 leading-snug">
                 아이와의 대화를 기록하고, 부모에게 요약과 인사이트를 전달하며,
@@ -41,7 +41,7 @@ export function MyBuddySection() {
             >
               <Image
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/mybuddy.png`}
-                alt="내친구 버디 – 가족과 함께하는 AI 동반자, 대화와 추천"
+                alt="AI 친구 – 가족과 함께하는 AI 동반자, 대화와 추천"
                 width={320}
                 height={213}
                 className="w-full h-auto max-h-52 object-contain"

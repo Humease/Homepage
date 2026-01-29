@@ -84,7 +84,7 @@ export function BusinessOverviewSection() {
                   transition={{ duration: 0.25 }}
                 />
                 <h3 className="text-xl font-semibold text-primary">
-                  내친구 버디
+                  AI 친구
                 </h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
                   {buddyItems.map((buddyItem) => (

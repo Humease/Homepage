@@ -1,6 +1,6 @@
 # 휴미즈(Humease) 홈페이지
 
-데이터 컴플라이언스(DC) 컨설팅과 AI 기반 가족 서비스(내친구 버디)를 소개하는 휴미즈 공식 홈페이지입니다.
+데이터 컴플라이언스(DC) 컨설팅과 AI 기반 가족 서비스(AI 친구)를 소개하는 휴미즈 공식 홈페이지입니다.
 
 ## 기술 스택
 
@@ -54,7 +54,7 @@ npm run build
 | `/` | 메인 (Hero, Philosophy, Business, Trust) |
 | `/about` | 회사 소개 |
 | `/business/dc` | 컨설팅 서비스 |
-| `/business/mybuddy` | 내친구 버디 |
+| `/business/mybuddy` | AI 친구 |
 | `/contact` | 문의 |
 | `/privacy` | 개인정보 처리방침 |
 

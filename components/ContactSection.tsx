@@ -16,7 +16,7 @@ export function ContactSection() {
         <h2 className="text-3xl font-semibold text-primary mb-8">문의하기</h2>
         <div className="space-y-6 text-gray-700">
           <p>
-            컨설팅 서비스, 내친구 버디, 제휴·투자 문의 등 다양한
+            컨설팅 서비스, AI 친구, 제휴·투자 문의 등 다양한
             협업 요청을 환영합니다.
           </p>
           <div className="pt-3 border-t border-gray-200">
