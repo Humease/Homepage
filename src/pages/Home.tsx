@@ -137,6 +137,7 @@ export default function Home() {
                       }
                     }}
                     className="absolute inset-0 select-none"
+                    aria-label="메인 히어로 이미지 슬라이드"
                   >
                     <img 
                       src={SLIDE_IMAGES[currentSlide].url} 
@@ -401,6 +402,7 @@ export default function Home() {
               exit={{ opacity: 0 }}
               onClick={() => setSelectedService(null)}
               className="absolute inset-0 bg-primary/90 backdrop-blur-xl"
+              aria-label="팝업 닫기 배경"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}

@@ -44,13 +44,35 @@ function ClickTracker() {
       const interactiveElement = target.closest('button, a, div, span') as HTMLElement;
       
       if (interactiveElement) {
-        // 텍스트가 없으면 aria-label, alt, 또는 태그명이라도 추출
-        const extractedText = (
+        // 텍스트 추출 시도 (중첩된 요소 고려)
+        let extractedText = (
           interactiveElement.innerText?.trim() || 
           interactiveElement.getAttribute('aria-label') || 
           target.getAttribute('alt') ||
-          `[${interactiveElement.tagName}] ${interactiveElement.className.split(' ')[0]}`
-        ).slice(0, 50);
+          ''
+        );
+
+        // 텍스트가 전혀 없는 경우에만 태그/클래스 분석
+        if (!extractedText) {
+          const className = interactiveElement.className || '';
+          const id = interactiveElement.id || '';
+          
+          if (id) {
+            extractedText = `[ID] ${id}`;
+          } else if (typeof className === 'string' && className.includes('backdrop')) {
+            extractedText = '[닫기] 배경 클릭';
+          } else if (typeof className === 'string' && className.includes('inset-0')) {
+            // 부모 섹션 찾기
+            const section = interactiveElement.closest('section');
+            const sectionTitle = section?.querySelector('h1, h2')?.textContent?.trim().slice(0, 10);
+            extractedText = `[배경] ${sectionTitle || '영역'} 클릭`;
+          } else {
+            extractedText = `[${interactiveElement.tagName}] ${typeof className === 'string' ? className.split(' ')[0] : ''}`;
+          }
+        }
+
+        // 길이 제한
+        extractedText = extractedText.slice(0, 50);
 
         // '닫기' 버튼 등 불필요한 로그는 제외
         if (extractedText === '닫기' || extractedText.includes('닫기')) return;
@@ -61,7 +83,8 @@ function ClickTracker() {
           element_text: extractedText,
           metadata: {
             tagName: interactiveElement.tagName,
-            className: interactiveElement.className
+            className: String(interactiveElement.className),
+            path: location.pathname
           }
         });
       }
