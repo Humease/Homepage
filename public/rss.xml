@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Humease (휴미즈)</title>
+  <link>https://humease.com</link>
+  <description>데이터는 안전하게 아이디어는 현실로 - 데이터 컴플라이언스 및 AI 서비스 구현 전문가</description>
+  <language>ko-kr</language>
+  <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0900</lastBuildDate>
+  <atom:link href="https://humease.com/rss.xml" rel="self" type="application/rss+xml" />
+
+  <item>
+    <title>e-Discovery 체계 구축 서비스</title>
+    <link>https://humease.com/services/e-discovery</link>
+    <description>규제 기관과 법적 분쟁에 대비하는 가장 확실한 방법. Microsoft 365 데이터 통합 검색 및 보존 체계 설계.</description>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 +0900</pubDate>
+    <guid>https://humease.com/services/e-discovery</guid>
+  </item>
+
+  <item>
+    <title>내부통제 및 개인정보 모니터링</title>
+    <link>https://humease.com/services/internal-control</link>
+    <description>M365(Email, Teams, OneDrive) 내 개인정보·민감정보 상시 탐지 및 보안 조치 자동화 체계 구축.</description>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 +0900</pubDate>
+    <guid>https://humease.com/services/internal-control</guid>
+  </item>
+
+  <item>
+    <title>Enterprise Vault 기반 Exchange 아카이빙</title>
+    <link>https://humease.com/services/exchange-archive</link>
+    <description>사서함 용량은 80% 절감하면서 사용 경험은 그대로. 효율적인 메일 운영 구조를 설계합니다.</description>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 +0900</pubDate>
+    <guid>https://humease.com/services/exchange-archive</guid>
+  </item>
+
+  <item>
+    <title>AI 기반 비즈니스 솔루션 및 컨설팅</title>
+    <link>https://humease.com/services/ai-consulting</link>
+    <description>LLM 기반 챗봇 구축부터 사내 지식 관리 시스템까지, 고객의 아이디어를 전문가가 직접 구현합니다.</description>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 +0900</pubDate>
+    <guid>https://humease.com/services/ai-consulting</guid>
+  </item>
+
+</channel>
+</rss>
