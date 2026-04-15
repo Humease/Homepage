@@ -54,21 +54,33 @@ function ClickTracker() {
 
         // 텍스트가 전혀 없는 경우에만 태그/클래스 분석
         if (!extractedText) {
-          const className = interactiveElement.className || '';
+          const className = String(interactiveElement.className || '');
           const id = interactiveElement.id || '';
           
           if (id) {
             extractedText = `[ID] ${id}`;
-          } else if (typeof className === 'string' && className.includes('backdrop')) {
+          } else if (className.includes('backdrop')) {
             extractedText = '[닫기] 배경 클릭';
-          } else if (typeof className === 'string' && className.includes('inset-0')) {
+          } else if (interactiveElement.closest('nav')) {
+            extractedText = '[메뉴] 영역 클릭';
+          } else if (className.includes('inset-0')) {
             // 부모 섹션 찾기
             const section = interactiveElement.closest('section');
-            const sectionTitle = section?.querySelector('h1, h2')?.textContent?.trim().slice(0, 10);
-            extractedText = `[배경] ${sectionTitle || '영역'} 클릭`;
+            const sectionTitle = section?.querySelector('h1, h2')?.textContent?.trim() || '';
+            
+            if (sectionTitle.includes('데이터는 안전하게')) {
+              extractedText = '[메인] 배경 클릭';
+            } else {
+              extractedText = `[배경] ${sectionTitle.slice(0, 5) || '영역'} 클릭`;
+            }
           } else {
-            extractedText = `[${interactiveElement.tagName}] ${typeof className === 'string' ? className.split(' ')[0] : ''}`;
+            extractedText = `[${interactiveElement.tagName}] ${className.split(' ')[0]}`;
           }
+        }
+
+        // 특정 패턴 필터링 (메뉴 항목이 뭉친 경우 등)
+        if (extractedText.includes('홈') && extractedText.includes('회사 소개')) {
+          extractedText = '[메뉴] 영역 클릭';
         }
 
         // 길이 제한
