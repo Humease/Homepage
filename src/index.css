@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Enterprise Deep Palette: Final Spec */
+  --color-primary: #050A18;      /* Deepest Navy */
+  --color-brand: #178BFF;        /* Action Blue */
+  --color-brand-muted: rgba(23, 139, 255, 0.1);
+  
+  /* Precision Gray Scale */
+  --color-text-white: #F5F7FA;   /* Warm White */
+  --color-text-dim: #A8B0BF;     /* Neutral Gray */
+  --color-gray-800: #1F2937;
+  --color-gray-900: #0F172A;
+  
+  /* Accents */
+  --color-border-dim: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  * {
+    @apply border-border-dim;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-primary text-text-white font-sans antialiased tracking-[-0.01em];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-[-0.03em] font-bold text-text-white;
+  }
+}
+
+@layer components {
+  .hero-container {
+    @apply max-w-7xl mx-auto px-[15%] md:px-[20%] text-center;
+  }
+  
+  .btn-primary {
+    @apply bg-brand text-white px-8 py-4 rounded-full font-medium transition-all hover:opacity-90 active:scale-95 shadow-lg shadow-brand/10;
+  }
+  
+  .btn-secondary {
+    @apply border border-white/20 text-white px-8 py-4 rounded-full font-medium transition-all hover:bg-white/5 active:scale-95;
+  }
+
+  .premium-blur {
+    @apply absolute blur-[120px] rounded-full opacity-20 pointer-events-none;
+  }
+
+  .animate-spin-slow {
+    animation: spin 12s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
