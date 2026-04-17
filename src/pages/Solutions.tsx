@@ -80,8 +80,8 @@ export default function Solutions() {
             transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-10 leading-snug tracking-tight text-white break-keep"
           >
-            한국 시장에서 유일하게 전담한<br className="hidden md:block" />{" "}
-            전문가가 컨설팅 해 드립니다.
+            한국 시장 유일의 전담 전문가가<br className="hidden md:block" />{" "}
+            직접 컨설팅해 드립니다.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
