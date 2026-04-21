@@ -38,16 +38,16 @@ export const JTBDS: JTBD[] = [
     shortDesc: '법적 대응을 빠르게 끝내고 싶을 때',
     fullDesc: '규제 기관·법적 분쟁 상황에서 Microsoft 365의 이메일, Teams, SharePoint, OneDrive 데이터를 통합 검색하여 즉시 제출할 수 있는 e-Discovery 체계를 설계하고 구축합니다.',
     tag: '법적 대응 시간 단축',
-    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160324696.jpg',
-    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160777710.jpg',
+    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160331326.jpg',
+    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160782294.jpg',
     asisImages: [
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160324696.jpg',
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160327511.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160331326.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160331326.jpg',
       '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160331326.jpg'
     ],
     tobeImages: [
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160777710.jpg',
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160780076.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160782294.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160782294.jpg',
       '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_ca-1776160782294.jpg'
     ],
     situations: [
@@ -99,17 +99,17 @@ export const JTBDS: JTBD[] = [
     shortDesc: '개인·민감정보를 통제하고 싶을 때',
     fullDesc: 'Microsoft 365 클라우드 환경 내 개인정보·민감정보를 상시 탐지하고, 사용자 알림·삭제 권고·이행 추적까지 연결되는 보안조치 체계를 구축합니다.',
     tag: '개인·민감정보 통제',
-    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160335542.jpg',
+    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160344883.jpg',
     tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160785557.jpg',
     asisImages: [
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160335542.jpg',
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160340767.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160344883.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160344883.jpg',
       '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_la-1776160344883.jpg'
     ],
     tobeImages: [
       '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160785557.jpg',
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160787379.jpg',
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160790071.jpg'
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160785557.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_la-1776160785557.jpg'
     ],
     situations: [
       'M365(Email, Teams, SharePoint, OneDrive) 내 민감정보 저장 현황 파악이 안 될 때',
@@ -160,16 +160,16 @@ export const JTBDS: JTBD[] = [
     shortDesc: 'Exchange 운영을 효율화하고 싶을 때',
     fullDesc: 'Enterprise Vault 기반 Exchange 사서함 아카이빙으로 사서함 용량을 대폭 절감하면서도, 사용자가 Outlook에서 과거 메일을 그대로 검색하고 열람할 수 있는 구조를 설계합니다.',
     tag: '운영 효율화',
-    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160349267.jpg',
-    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160794141.jpg',
+    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160355407.jpg',
+    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160798625.jpg',
     asisImages: [
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160349267.jpg',
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160352615.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160355407.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160355407.jpg',
       '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_me-1776160355407.jpg'
     ],
     tobeImages: [
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160794141.jpg',
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160796362.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160798625.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160798625.jpg',
       '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_me-1776160798625.jpg'
     ],
     situations: [
@@ -221,17 +221,17 @@ export const JTBDS: JTBD[] = [
     shortDesc: '아이디어를 현실로 만들고 싶을 때',
     fullDesc: '홈페이지 제작, 웹서비스 개발, AI 챗봇 접목, MVP 구현부터 AI 기반 사내 지식관리 시스템 구축까지 고객의 아이디어를 실제 서비스로 만들어 드립니다.',
     tag: '아이디어 현실화',
-    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160312508.jpg',
-    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160771911.jpg',
+    asisImage: '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160319516.jpg',
+    tobeImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160774361.jpg',
     asisImages: [
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160312508.jpg',
-      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160315795.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160319516.jpg',
+      '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160319516.jpg',
       '/JTBD/AS-IS/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160319516.jpg'
     ],
     tobeImages: [
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160771911.jpg',
       '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160774361.jpg',
-      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Modern_Ko-1776160769558.jpg'
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160774361.jpg',
+      '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160774361.jpg'
     ],
     situations: [
       '사업 아이디어는 있으나 기획/디자인/개발 등 기술적 구현 역량이 부족할 때',
@@ -243,7 +243,7 @@ export const JTBDS: JTBD[] = [
       '기술 파트너 부재로 인한 개발 속도 저하 및 비용 낭비',
       '보유한 데이터의 가치를 제대로 활용하지 못하는 운영 비효율'
     ],
-    solutionImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Modern_Ko-1776160769558.jpg',
+    solutionImage: '/JTBD/TO-BE/Photorealistic_image_169_aspect_ratio_Korean_mi-1776160774361.jpg',
     solutions: [
       { title: '맞춤형 웹·애플리케이션 개발', desc: '비즈니스 목표에 최적화된 홈페이지, 랜딩페이지 및 웹 서비스를 기획하고 개발합니다.' },
       { title: 'AI 챗봇 및 에이전트 구축', desc: '최신 LLM 기반의 AI 챗봇과 업무 보조 에이전트를 설계하여 사용자 경험을 혁신합니다.' },
