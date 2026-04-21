@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Humease</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegs = window.location.pathname.split('/');
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="text/javascript">
+      // Redirect to index.html with the current path
+      var redirectUrl = window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace('/?' + redirectUrl.replace(/&/g, '~and~'));
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
