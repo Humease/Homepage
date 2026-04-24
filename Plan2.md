@@ -937,7 +937,7 @@ Supabase Project URL
 https://cgydvjqhsllpeuxbephb.supabase.co
 
 anon API Key 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNneWR2anFoc2xscGV1eGJlcGhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNDk0MjcsImV4cCI6MjA5MTcyNTQyN30._wmUc8njMetkyF5iSSFkz40YlMx5Q8lcnFgdYvESz-8
+YOUR_SUPABASE_ANON_KEY
 
   (구현 방식은 Antigravity와 휴미즈 간 협의 필요)
 
