@@ -59,6 +59,16 @@ export default function Footer() {
                 <Link to="/solutions" className="text-white/60 hover:text-brand transition-all font-medium">솔루션</Link>
               </li>
               <li>
+                <a 
+                  href="https://blog.humease.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-brand transition-all font-medium"
+                >
+                  블로그
+                </a>
+              </li>
+              <li>
                 <Link to="/contact" className="text-white/60 hover:text-brand transition-all font-medium">상담 신청</Link>
               </li>
             </ul>

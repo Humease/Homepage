@@ -69,6 +69,15 @@ export default function Navbar() {
             솔루션
           </Link>
           
+          <a 
+            href="https://blog.humease.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-white/70 transition-all hover:text-brand"
+          >
+            블로그
+          </a>
+          
           <div 
             className="relative"
             onMouseEnter={() => setIsServiceOpen(true)}
@@ -155,6 +164,16 @@ export default function Navbar() {
               >
                 솔루션
               </Link>
+
+              <a 
+                href="https://blog.humease.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-bold text-white hover:text-brand"
+              >
+                블로그
+              </a>
               
               <div className="flex flex-col gap-4">
                 <div className="text-xs font-black text-white/30 uppercase tracking-widest">Services</div>
