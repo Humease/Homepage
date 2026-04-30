@@ -88,7 +88,7 @@
 - React + Vite + TypeScript
 - Tailwind CSS
 - Node.js
-- Vercel
+
 
 특별한 사유가 없으면 다른 기술로 바꾸지 않습니다.
 

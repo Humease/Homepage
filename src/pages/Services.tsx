@@ -26,7 +26,7 @@ export default function Services() {
       items: ["메일 아카이빙 시스템 설계", "스토리지 최적화 전략", "백업 및 복구 체계 고도화"]
     },
     {
-      id: "ai-consulting",
+      id: "ai-transformation",
       title: "AI 활용 컨설팅",
       icon: <Cpu className="text-brand" size={32} />,
       desc: "기업의 비정형 데이터를 AI가 즉시 활용 가능한 자산으로 전환하는 기술적 기반을 마련합니다.",
@@ -83,7 +83,7 @@ export default function Services() {
           {services.map((service, i) => (
             <Link 
               key={i}
-              to={`/services/${service.id}`}
+              to={`/consulting/${service.id}`}
               className="block"
             >
               <motion.div 

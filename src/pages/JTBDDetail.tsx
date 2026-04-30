@@ -32,7 +32,7 @@ export default function JTBDDetail() {
       case 'e-discovery': return <Search className="text-white/40" size={24} />;
       case 'internal-control': return <Shield className="text-white/40" size={24} />;
       case 'exchange-archive': return <Archive className="text-white/40" size={24} />;
-      case 'ai-consulting': return <Zap className="text-white/40" size={24} />;
+      case 'ai-transformation': return <Zap className="text-white/40" size={24} />;
       default: return <Search className="text-white/40" size={24} />;
     }
   };
@@ -54,7 +54,7 @@ export default function JTBDDetail() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
               {getIcon()}
               <span className="text-white/60 text-[12px] font-bold tracking-widest uppercase">
-                {jtbd.id === 'ai-consulting' ? 'AI 컨설팅' : '데이터 컴플라이언스 컨설팅'}
+                {jtbd.id === 'ai-transformation' ? 'AI 컨설팅' : '데이터 컴플라이언스 컨설팅'}
               </span>
             </div>
             

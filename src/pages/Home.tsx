@@ -219,28 +219,28 @@ export default function Home() {
                 label: "규제 대응",
                 title: "규제 기관이 데이터를 요구했는데, 즉시 제출할 수 없다",
                 desc: "공정거래위원회, 금융감독원, 법원 등에서 이메일, 메신저, 문서 데이터를 제출하라고 요구받았을 때, Microsoft 365에 있는 데이터를 통합적으로 검색하고 추출할 수 있는 체계가 갖춰져 있습니까?",
-                link: "/services/e-discovery",
+                link: "/consulting/e-discovery",
                 image: "/JTBD/landingpage/Photorealistic_image_aspect_ratio_169_Korean_mi-1776160312508.jpg"
               },
               {
                 label: "개인·민감정보 통제",
                 title: "클라우드에 개인정보와 민감정보가 통제 없이 쌓이고 있다",
                 desc: "Microsoft 365의 이메일, Teams, SharePoint, OneDrive에 고객 개인정보나 금융 민감정보가 저장되어 있는지 상시적으로 모니터링하고 있습니까? 탐지되었을 때 즉시 조치하는 프로세스가 있습니까?",
-                link: "/services/internal-control",
+                link: "/consulting/internal-control",
                 image: "/JTBD/landingpage/Photorealistic_image_aspect_ratio_169_Korean_ca-1776160327511.jpg"
               },
               {
                 label: "운영 효율",
                 title: "이메일 데이터가 계속 늘어나는데, 사서함 용량은 한계 달했다",
                 desc: "Exchange Server의 사서함 용량은 제한되어 있지만, 사용자들은 과거 메일을 삭제하지 않으려 합니다. 사서함 용량을 줄이면서도 과거 메일에 접근할 수 있는 아카이빙 구조가 있습니까?",
-                link: "/services/exchange-archive",
+                link: "/consulting/exchange-archive",
                 image: "/JTBD/landingpage/Photorealistic_image_aspect_ratio_169_Korean_la-1776160335542.jpg"
               },
               {
                 label: "아이디어 실현",
                 title: "좋은 아이디어가 있는데, 서비스로 만들 방법을 모르겠다",
                 desc: "홈페이지, 웹서비스, AI 챗봇, MVP를 만들고 싶은데 내부에 기술 역량이 부족합니다. 비즈니스를 이해하면서 기술까지 함께 설계해 줄 파트너가 필요하지 않습니까?",
-                link: "/services/ai-consulting",
+                link: "/consulting/ai-transformation",
                 image: "/JTBD/landingpage/Photorealistic_image_aspect_ratio_169_Korean_Se-1776160361248.jpg"
               }
             ].map((problem, i) => (
@@ -284,7 +284,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {JTBDS.map((jtbd) => (
-              <Link key={jtbd.id} to={`/services/${jtbd.id}`} className="block h-full">
+              <Link key={jtbd.id} to={`/consulting/${jtbd.id}`} className="block h-full">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -295,7 +295,7 @@ export default function Home() {
                     {jtbd.id === 'e-discovery' && <Search className="text-brand" size={28} />}
                     {jtbd.id === 'internal-control' && <Shield className="text-brand" size={28} />}
                     {jtbd.id === 'exchange-archive' && <Archive className="text-brand" size={28} />}
-                    {jtbd.id === 'ai-consulting' && <Zap className="text-brand" size={28} />}
+                    {jtbd.id === 'ai-transformation' && <Zap className="text-brand" size={28} />}
                   </div>
                   
                   <div className="flex flex-col flex-grow">
@@ -422,7 +422,7 @@ export default function Home() {
                   {selectedService.id === 'e-discovery' && <Search className="text-brand" size={32} />}
                   {selectedService.id === 'internal-control' && <Shield className="text-brand" size={32} />}
                   {selectedService.id === 'exchange-archive' && <Archive className="text-brand" size={32} />}
-                  {selectedService.id === 'ai-consulting' && <Zap className="text-brand" size={32} />}
+                  {selectedService.id === 'ai-transformation' && <Zap className="text-brand" size={32} />}
                 </div>
 
                 <span className="text-brand text-xs font-black tracking-widest uppercase mb-4 block">

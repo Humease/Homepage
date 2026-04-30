@@ -24,10 +24,10 @@ export default function Navbar() {
   }, [location]);
 
   const services = [
-    { name: "e-Discovery", path: "/services/e-discovery" },
-    { name: "Internal Control", path: "/services/internal-control" },
-    { name: "Exchange Archive", path: "/services/exchange-archive" },
-    { name: "AI Consulting", path: "/services/ai-consulting" },
+    { name: "e-Discovery", path: "/consulting/e-discovery" },
+    { name: "Internal Control", path: "/consulting/internal-control" },
+    { name: "Exchange Archive", path: "/consulting/exchange-archive" },
+    { name: "AI Transformation (AX)", path: "/consulting/ai-transformation" },
   ];
 
   return (
@@ -77,6 +77,15 @@ export default function Navbar() {
           >
             블로그
           </a>
+
+          <Link 
+            to="/ai-services" 
+            className={`text-sm font-bold transition-all hover:text-brand ${
+              location.pathname === '/ai-services' ? 'text-brand underline underline-offset-8' : 'text-white/70'
+            }`}
+          >
+            AI 서비스
+          </Link>
           
           <div 
             className="relative"
@@ -85,10 +94,10 @@ export default function Navbar() {
           >
             <button 
               className={`flex items-center gap-1 text-sm font-bold transition-all hover:text-brand ${
-                location.pathname.startsWith('/services') ? 'text-brand' : 'text-white/70'
+                location.pathname.startsWith('/consulting') ? 'text-brand' : 'text-white/70'
               }`}
             >
-              서비스 <ChevronDown size={14} className={`transition-transform ${isServiceOpen ? 'rotate-180' : ''}`} />
+              컨설팅 <ChevronDown size={14} className={`transition-transform ${isServiceOpen ? 'rotate-180' : ''}`} />
             </button>
             
             <AnimatePresence>
@@ -174,9 +183,17 @@ export default function Navbar() {
               >
                 블로그
               </a>
+
+              <Link 
+                to="/ai-services"
+                onClick={() => { setIsOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}
+                className="text-2xl font-bold text-white hover:text-brand"
+              >
+                AI 서비스
+              </Link>
               
               <div className="flex flex-col gap-4">
-                <div className="text-xs font-black text-white/30 uppercase tracking-widest">Services</div>
+                <div className="text-xs font-black text-white/30 uppercase tracking-widest">Consulting</div>
                 {services.map((service) => (
                   <Link
                     key={service.path}

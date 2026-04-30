@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Solutions from './pages/Solutions';
 import Admin from './pages/Admin';
+import AIServices from './pages/AIServices';
 
 import { logEvent } from './lib/supabase';
 
@@ -121,9 +122,11 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/solutions" element={<Solutions />} />
-            <Route path="/services/:id" element={<JTBDDetail />} />
-            <Route path="/jtbd/:id" element={<Navigate to="/services/:id" replace />} />
+            <Route path="/consulting/:id" element={<JTBDDetail />} />
+            <Route path="/services/:id" element={<Navigate to="/consulting/:id" replace />} />
+            <Route path="/jtbd/:id" element={<Navigate to="/consulting/:id" replace />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/ai-services" element={<AIServices />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>

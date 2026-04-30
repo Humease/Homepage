@@ -4,10 +4,10 @@ import { Lock } from 'lucide-react';
 
 export default function Footer() {
   const services = [
-    { name: "e-Discovery", path: "/services/e-discovery" },
-    { name: "Internal Control", path: "/services/internal-control" },
-    { name: "Exchange Archive", path: "/services/exchange-archive" },
-    { name: "AI Consulting", path: "/services/ai-consulting" },
+    { name: "e-Discovery", path: "/consulting/e-discovery" },
+    { name: "Internal Control", path: "/consulting/internal-control" },
+    { name: "Exchange Archive", path: "/consulting/exchange-archive" },
+    { name: "AI Transformation (AX)", path: "/consulting/ai-transformation" },
   ];
 
   return (
@@ -33,7 +33,7 @@ export default function Footer() {
           
           {/* Center: Services */}
           <div className="flex flex-col gap-8">
-            <h4 className="text-xs font-black text-white/30 uppercase tracking-[0.3em]">Services</h4>
+            <h4 className="text-xs font-black text-white/30 uppercase tracking-[0.3em]">Consulting</h4>
             <ul className="grid grid-cols-1 gap-4">
               {services.map((service) => (
                 <li key={service.path}>

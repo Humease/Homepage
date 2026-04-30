@@ -1,5 +1,19 @@
 User-agent: *
 Allow: /
-Disallow: /admin
 
-Sitemap: https://humease.com/sitemap.xml
+# Sitemap and AI Documentation
+Sitemap: https://www.humease.com/sitemap.xml
+llms-txt: https://www.humease.com/llms.txt
+
+# AI Crawler Settings
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

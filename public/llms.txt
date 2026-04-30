@@ -1,0 +1,30 @@
+# Humease (휴미즈)
+
+> 데이터는 안전하게, 아이디어는 현실로. Microsoft MVP 출신 전문가가 설계하는 데이터 컴플라이언스 및 맞춤형 AI 서비스 컨설팅 전문 기업.
+
+## 핵심 가치 (Core Values)
+- **전문성 (Expertise)**: Microsoft MVP, Symantec, Veritas 전문가 그룹이 직접 아키텍처 설계
+- **안전성 (Security)**: 기업 데이터의 장기 보존 및 법적 증빙 대응 체계 구축
+- **실현력 (Realization)**: 고객의 비즈니스 아이디어를 AI 기술로 실제 서비스화 (AX)
+
+## 주요 서비스 (Main Services)
+
+### 1. 데이터 컴플라이언스 (Consulting)
+- **e-Discovery**: 법적 분쟁 및 감사 대응 데이터 검색/보존 체계 구축
+- **내부통제**: M365(Email, Teams) 내 개인정보 및 민감정보 상시 모니터링
+- **아카이빙**: Enterprise Vault 기반 메일 아카이빙 및 스토리지 최적화
+
+### 2. AI 서비스 (AI Services)
+- **AnyBuild**: 아이디어를 실제 웹서비스로 구현하는 AI 빌더
+- **HairAI**: 나에게 맞는 헤어스타일을 AI로 분석 및 추천
+- **내친구 케이 (k-bestie)**: 아이의 정서 변화를 파악하는 AI 친구
+
+## 기술 스택 및 솔루션
+- Enterprise Vault, Merge1, Data Insight
+- Microsoft 365, Exchange Server
+- React, TypeScript, AI Agent/LLM Integration
+
+## 연락처 및 채널
+- **공식 홈페이지**: https://www.humease.com
+- **기술 블로그**: https://blog.humease.com
+- **이메일**: contact@humease.com

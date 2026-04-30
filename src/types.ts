@@ -216,8 +216,8 @@ export const JTBDS: JTBD[] = [
     ]
   },
   {
-    id: 'ai-consulting',
-    title: 'AI Consulting',
+    id: 'ai-transformation',
+    title: 'AI Transformation (AX)',
     shortDesc: '아이디어를 현실로 만들고 싶을 때',
     fullDesc: '홈페이지 제작, 웹서비스 개발, AI 챗봇 접목, MVP 구현부터 AI 기반 사내 지식관리 시스템 구축까지 고객의 아이디어를 실제 서비스로 만들어 드립니다.',
     tag: '아이디어 현실화',
