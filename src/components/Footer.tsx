@@ -61,8 +61,6 @@ export default function Footer() {
               <li>
                 <a 
                   href="https://blog.humease.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
                   className="text-white/60 hover:text-brand transition-all font-medium"
                 >
                   블로그

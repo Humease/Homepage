@@ -71,8 +71,6 @@ export default function Navbar() {
           
           <a 
             href="https://blog.humease.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
             className="text-sm font-bold text-white/70 transition-all hover:text-brand"
           >
             블로그
@@ -176,8 +174,6 @@ export default function Navbar() {
 
               <a 
                 href="https://blog.humease.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="text-2xl font-bold text-white hover:text-brand"
               >
