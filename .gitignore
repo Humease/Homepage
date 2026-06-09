@@ -10,3 +10,5 @@ coverage/
 .vercel
 docs/
 
+.supabase_token
+scratch/

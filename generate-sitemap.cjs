@@ -28,3 +28,14 @@ ${routes.map(route => `  <url>
 
 fs.writeFileSync(path.join(__dirname, 'dist', 'sitemap.xml'), sitemap);
 console.log('Sitemap generated successfully in dist/sitemap.xml');
+
+// Copy index.html to 404.html for GitHub Pages routing fallback
+try {
+  fs.copyFileSync(
+    path.join(__dirname, 'dist', 'index.html'),
+    path.join(__dirname, 'dist', '404.html')
+  );
+  console.log('Successfully copied index.html to 404.html for SPA routing fallback.');
+} catch (err) {
+  console.error('Failed to copy index.html to 404.html:', err);
+}

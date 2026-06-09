@@ -122,6 +122,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/consulting/ai-consulting" element={<Navigate to="/consulting/ai-transformation" replace />} />
+            <Route path="/jtbd/ai-consulting" element={<Navigate to="/consulting/ai-transformation" replace />} />
+            <Route path="/services/ai-consulting" element={<Navigate to="/consulting/ai-transformation" replace />} />
             <Route path="/consulting/:id" element={<JTBDDetail />} />
             <Route path="/services/:id" element={<Navigate to="/consulting/:id" replace />} />
             <Route path="/jtbd/:id" element={<Navigate to="/consulting/:id" replace />} />

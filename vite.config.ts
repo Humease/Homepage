@@ -19,6 +19,17 @@ const routes = [
   '/consulting/internal-control',
   '/consulting/exchange-archive',
   '/consulting/ai-transformation',
+  '/consulting/ai-consulting',
+  '/jtbd/e-discovery',
+  '/jtbd/internal-control',
+  '/jtbd/exchange-archive',
+  '/jtbd/ai-transformation',
+  '/jtbd/ai-consulting',
+  '/services/e-discovery',
+  '/services/internal-control',
+  '/services/exchange-archive',
+  '/services/ai-transformation',
+  '/services/ai-consulting',
 ];
 
 export default defineConfig(({ mode }) => {
