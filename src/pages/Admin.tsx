@@ -407,7 +407,7 @@ export default function Admin() {
                     <thead>
                       <tr className="border-b border-white/5 bg-white/[0.01]">
                         <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">신청 일시</th>
-                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기업 정보</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-60 min-w-[180px]">기업 정보</th>
                         <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">상세 연락처</th>
                         <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-48">관심 서비스</th>
                         <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[220px]">요청 메시지</th>
@@ -429,12 +429,12 @@ export default function Admin() {
                               </div>
                             </td>
                             <td className="p-6">
-                              <div className="flex flex-col">
+                              <div className="flex flex-col whitespace-nowrap">
                                 <div className="flex items-center gap-2 text-brand font-black mb-1">
-                                  <Building2 size={14} /> {item.company_name}
+                                  <Building2 size={14} className="shrink-0" /> <span className="truncate max-w-[200px]" title={item.company_name}>{item.company_name}</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-white/60 text-sm">
-                                  <UserIcon size={14} /> {item.manager_name}
+                                  <UserIcon size={14} className="shrink-0" /> <span className="truncate max-w-[200px]" title={item.manager_name}>{item.manager_name}</span>
                                 </div>
                               </div>
                             </td>
