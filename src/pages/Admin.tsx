@@ -90,13 +90,16 @@ export default function Admin() {
     if (!window.confirm('정말 이 상담 신청 내역을 삭제하시겠습니까?')) return;
     
     setLoading(true);
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('inquiries')
       .delete()
-      .eq('id', id);
+      .eq('id', id)
+      .select();
       
     if (error) {
       alert('삭제 실패: ' + error.message);
+    } else if (!data || data.length === 0) {
+      alert('삭제 권한이 없거나 삭제되지 않았습니다. Supabase RLS 정책(DELETE)을 설정해 주세요.');
     } else {
       setInquiries(prev => prev.filter(item => item.id !== id));
     }
