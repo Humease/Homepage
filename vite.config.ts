@@ -30,6 +30,7 @@ const routes = [
   '/services/exchange-archive',
   '/services/ai-transformation',
   '/services/ai-consulting',
+  '/admin',
 ];
 
 export default defineConfig(({ mode }) => {
