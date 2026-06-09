@@ -12,7 +12,8 @@ import {
   User as UserIcon,
   Mail,
   Phone,
-  ArrowUpDown
+  ArrowUpDown,
+  Trash2
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
@@ -81,6 +82,23 @@ export default function Admin() {
         .select('*')
         .order('created_at', { ascending: false });
       setInquiries(data || []);
+    }
+    setLoading(false);
+  };
+
+  const handleDeleteInquiry = async (id: string) => {
+    if (!window.confirm('정말 이 상담 신청 내역을 삭제하시겠습니까?')) return;
+    
+    setLoading(true);
+    const { error } = await supabase
+      .from('inquiries')
+      .delete()
+      .eq('id', id);
+      
+    if (error) {
+      alert('삭제 실패: ' + error.message);
+    } else {
+      setInquiries(prev => prev.filter(item => item.id !== id));
     }
     setLoading(false);
   };
@@ -389,12 +407,13 @@ export default function Admin() {
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">상세 연락처</th>
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-48">관심 서비스</th>
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[360px]">요청 메시지</th>
+                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-20 text-center">삭제</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {inquiries.length === 0 ? (
                       <tr>
-                        <td colSpan={5} className="p-20 text-center text-white/20 font-bold">접수된 상담 신청이 없습니다.</td>
+                        <td colSpan={6} className="p-20 text-center text-white/20 font-bold">접수된 상담 신청이 없습니다.</td>
                       </tr>
                     ) : (
                       inquiries.map((item) => (
@@ -438,6 +457,15 @@ export default function Admin() {
                             <p className="text-sm text-white/60 group-hover:text-white/90 transition-all font-medium leading-relaxed">
                               {item.message || '-'}
                             </p>
+                          </td>
+                          <td className="p-6 text-center">
+                            <button 
+                              onClick={() => handleDeleteInquiry(item.id)}
+                              className="p-2 text-white/40 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all"
+                              title="삭제"
+                            >
+                              <Trash2 size={16} />
+                            </button>
                           </td>
                         </tr>
                       ))
