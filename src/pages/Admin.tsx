@@ -129,16 +129,16 @@ export default function Admin() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen pt-40 pb-20 px-6 bg-primary flex items-center justify-center">
+      <div className="min-h-screen pt-32 sm:pt-40 pb-20 px-4 sm:px-6 bg-primary flex items-center justify-center">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="w-full max-w-md bg-white/[0.02] border border-white/10 rounded-[40px] p-10 backdrop-blur-2xl shadow-2xl"
+          className="w-full max-w-md bg-white/[0.02] border border-white/10 rounded-[30px] sm:rounded-[40px] p-6 sm:p-10 backdrop-blur-2xl shadow-2xl"
         >
-          <div className="w-20 h-20 bg-brand/20 text-brand rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg shadow-brand/10">
-            <Lock size={36} />
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand/20 text-brand rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-lg shadow-brand/10">
+            <Lock size={30} className="sm:w-9 sm:h-9" />
           </div>
-          <h1 className="text-3xl font-black text-white text-center mb-10 tracking-tight text-brand">관리자 페이지</h1>
+          <h1 className="text-2xl sm:text-3xl font-black text-white text-center mb-8 sm:mb-10 tracking-tight text-brand">관리자 페이지</h1>
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
               <label className="text-[11px] font-black text-white/30 uppercase tracking-[0.3em] ml-2">ID</label>
@@ -198,23 +198,23 @@ export default function Admin() {
         </div>
 
         {/* 탭 네비게이션 */}
-        <div className="flex gap-4 mb-10 p-1.5 bg-white/5 rounded-2xl w-fit border border-white/5">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-10 p-1.5 bg-white/5 rounded-2xl w-full sm:w-fit border border-white/5">
           <button 
             onClick={() => setActiveTab('inquiries')}
-            className={`px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${
+            className={`w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
               activeTab === 'inquiries' ? 'bg-brand text-white shadow-lg shadow-brand/20' : 'text-white/40 hover:text-white/70'
             }`}
           >
-            <MessageSquare size={18} /> 상담 신청 내역
+            <MessageSquare size={18} /> <span className="whitespace-nowrap">상담 신청 내역</span>
             {inquiries.length > 0 && <span className="ml-2 bg-white/20 px-2 py-0.5 rounded-full text-[10px]">{inquiries.length}</span>}
           </button>
           <button 
             onClick={() => setActiveTab('logs')}
-            className={`px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${
+            className={`w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${
               activeTab === 'logs' ? 'bg-brand text-white shadow-lg shadow-brand/20' : 'text-white/40 hover:text-white/70'
             }`}
           >
-            <MousePointer2 size={18} /> 실시간 클릭 로그
+            <MousePointer2 size={18} /> <span className="whitespace-nowrap">실시간 클릭 로그</span>
           </button>
         </div>
 
@@ -396,69 +396,181 @@ export default function Admin() {
               <div className="animate-spin w-12 h-12 border-4 border-brand border-t-transparent rounded-full"></div>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              {activeTab === 'inquiries' ? (
-                // ... 상담 신청 내역 테이블 (생략 유지)
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-white/5 bg-white/[0.01]">
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">신청 일시</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기업 정보</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">상세 연락처</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-48">관심 서비스</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[220px]">요청 메시지</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-20 text-center">삭제</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/5">
-                    {inquiries.length === 0 ? (
-                      <tr>
-                        <td colSpan={6} className="p-20 text-center text-white/20 font-bold">접수된 상담 신청이 없습니다.</td>
+            <div>
+              {/* === Desktop Table View (Hidden on mobile) === */}
+              <div className="hidden md:block overflow-x-auto">
+                {activeTab === 'inquiries' ? (
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-white/5 bg-white/[0.01]">
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">신청 일시</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기업 정보</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">상세 연락처</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-48">관심 서비스</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[220px]">요청 메시지</th>
+                        <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-20 text-center">삭제</th>
                       </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5">
+                      {inquiries.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="p-20 text-center text-white/20 font-bold">접수된 상담 신청이 없습니다.</td>
+                        </tr>
+                      ) : (
+                        inquiries.map((item) => (
+                          <tr key={item.id} className="hover:bg-white/[0.02] transition-colors group">
+                            <td className="p-6 whitespace-nowrap">
+                              <div className="flex flex-col">
+                                <span className="text-white font-bold">{new Date(item.created_at).toLocaleDateString()}</span>
+                                <span className="text-white/30 text-xs">{new Date(item.created_at).toLocaleTimeString()}</span>
+                              </div>
+                            </td>
+                            <td className="p-6">
+                              <div className="flex flex-col">
+                                <div className="flex items-center gap-2 text-brand font-black mb-1">
+                                  <Building2 size={14} /> {item.company_name}
+                                </div>
+                                <div className="flex items-center gap-2 text-white/60 text-sm">
+                                  <UserIcon size={14} /> {item.manager_name}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="p-6">
+                              <div className="flex flex-col gap-1 text-sm">
+                                <div className="flex items-center gap-2 text-white/80 group-hover:text-white">
+                                  <Mail size={14} className="text-white/30" /> {item.email}
+                                </div>
+                                <div className="flex items-center gap-2 text-white/80 group-hover:text-white">
+                                  <Phone size={14} className="text-white/30" /> {item.phone}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="p-6 w-48">
+                              <div className="flex flex-wrap gap-1.5">
+                                {item.interested_services.split(',').map((s: string, idx: number) => (
+                                  <span key={idx} className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-white/60 group-hover:text-white/90 whitespace-nowrap">
+                                    {s.trim()}
+                                  </span>
+                                ))}
+                              </div>
+                            </td>
+                            <td className="p-6 min-w-[220px]">
+                              <p className="text-sm text-white/60 group-hover:text-white/90 transition-all font-medium leading-relaxed">
+                                {item.message || '-'}
+                              </p>
+                            </td>
+                            <td className="p-6 text-center">
+                              <button 
+                                onClick={() => handleDeleteInquiry(item.id)}
+                                className="p-2 text-white/40 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all"
+                                title="삭제"
+                              >
+                                <Trash2 size={16} />
+                              </button>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                ) : (
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-white/5 bg-white/[0.01]">
+                        {logSortOrder === 'recent' ? (
+                          <>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">시간</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">구분</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">텍스트/ID</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">위치</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기기 정보</th>
+                          </>
+                        ) : (
+                          <>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">순위</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">클릭 요소 (텍스트/ID)</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-32">클릭 횟수</th>
+                            <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">주요 위치</th>
+                          </>
+                        )}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5">
+                      {(() => {
+                        const filtered = getFilteredLogs();
+                        if (filtered.length === 0) return (
+                          <tr><td colSpan={5} className="p-20 text-center text-white/20 font-bold">해당 기간에 수집된 로그가 없습니다.</td></tr>
+                        );
+                        if (logSortOrder === 'recent') {
+                          return filtered.slice((logPage - 1) * LOG_PAGE_SIZE, logPage * LOG_PAGE_SIZE).map((log) => (
+                            <tr key={log.id} className="hover:bg-white/[0.02] transition-colors group">
+                              <td className="p-6 whitespace-nowrap text-sm text-white/30">
+                                {new Date(log.created_at).toLocaleString()}
+                              </td>
+                              <td className="p-6">
+                                <span className="px-3 py-1 bg-brand/10 text-brand text-[10px] font-black rounded-full border border-brand/20 uppercase">
+                                  {log.event_type}
+                                </span>
+                              </td>
+                              <td className="p-6">
+                                <div className="flex flex-col">
+                                  <span className="text-white font-bold line-clamp-1">{log.element_text || '-'}</span>
+                                  <span className="text-white/20 text-[10px] font-mono">{log.element_id || '-'}</span>
+                                </div>
+                              </td>
+                              <td className="p-6 text-white/60 font-medium text-sm">{log.page_path}</td>
+                              <td className="p-6 max-w-xs">
+                                <p className="text-[10px] text-white/20 font-mono truncate hover:whitespace-normal transition-all">{log.user_agent}</p>
+                              </td>
+                            </tr>
+                          ));
+                        } else {
+                          const counts: { [key: string]: any } = {};
+                          filtered.forEach(log => {
+                            const key = log.element_text || log.element_id || 'Unknown';
+                            if (!counts[key]) counts[key] = { text: key, id: log.element_id, count: 0, path: log.page_path };
+                            counts[key].count++;
+                          });
+                          return Object.values(counts).sort((a, b) => b.count - a.count).map((item, idx) => (
+                            <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
+                              <td className="p-6">
+                                <span className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-black ${
+                                  idx === 0 ? 'bg-brand text-white' : idx === 1 ? 'bg-white/20 text-white' : idx === 2 ? 'bg-white/10 text-white/60' : 'bg-white/5 text-white/30'
+                                }`}>{idx + 1}</span>
+                              </td>
+                              <td className="p-6"><div className="flex flex-col text-sm"><span className="text-white font-bold">{item.text}</span>{item.id && <span className="text-white/20 text-[10px] font-mono">{item.id}</span>}</div></td>
+                              <td className="p-6">
+                                <div className="flex items-center gap-3">
+                                  <div className="flex-grow h-1.5 bg-white/5 rounded-full overflow-hidden max-w-[100px]">
+                                    <div className="h-full bg-brand" style={{ width: `${Math.min(100, (item.count / filtered.length) * 500)}%` }}></div>
+                                  </div>
+                                  <span className="text-brand font-black text-lg">{item.count}</span>
+                                </div>
+                              </td>
+                              <td className="p-6 text-white/40 text-xs font-medium italic">{item.path}</td>
+                            </tr>
+                          ));
+                        }
+                      })()}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+
+              {/* === Mobile Card List View (Visible only on mobile) === */}
+              <div className="block md:hidden">
+                {activeTab === 'inquiries' ? (
+                  <div className="divide-y divide-white/5">
+                    {inquiries.length === 0 ? (
+                      <div className="p-16 text-center text-white/20 font-bold text-sm">접수된 상담 신청이 없습니다.</div>
                     ) : (
                       inquiries.map((item) => (
-                        <tr key={item.id} className="hover:bg-white/[0.02] transition-colors group">
-                          <td className="p-6 whitespace-nowrap">
-                            <div className="flex flex-col">
-                              <span className="text-white font-bold">{new Date(item.created_at).toLocaleDateString()}</span>
-                              <span className="text-white/30 text-xs">{new Date(item.created_at).toLocaleTimeString()}</span>
-                            </div>
-                          </td>
-                          <td className="p-6">
-                            <div className="flex flex-col">
-                              <div className="flex items-center gap-2 text-brand font-black mb-1">
-                                <Building2 size={14} /> {item.company_name}
-                              </div>
-                              <div className="flex items-center gap-2 text-white/60 text-sm">
-                                <UserIcon size={14} /> {item.manager_name}
-                              </div>
-                            </div>
-                          </td>
-                          <td className="p-6">
-                            <div className="flex flex-col gap-1 text-sm">
-                              <div className="flex items-center gap-2 text-white/80 group-hover:text-white">
-                                <Mail size={14} className="text-white/30" /> {item.email}
-                              </div>
-                              <div className="flex items-center gap-2 text-white/80 group-hover:text-white">
-                                <Phone size={14} className="text-white/30" /> {item.phone}
-                              </div>
-                            </div>
-                          </td>
-                          <td className="p-6 w-48">
-                            <div className="flex flex-wrap gap-1.5">
-                              {item.interested_services.split(',').map((s: string, idx: number) => (
-                                <span key={idx} className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-white/60 group-hover:text-white/90 whitespace-nowrap">
-                                  {s.trim()}
-                                </span>
-                              ))}
-                            </div>
-                          </td>
-                          <td className="p-6 min-w-[220px]">
-                            <p className="text-sm text-white/60 group-hover:text-white/90 transition-all font-medium leading-relaxed">
-                              {item.message || '-'}
-                            </p>
-                          </td>
-                          <td className="p-6 text-center">
+                        <div key={item.id} className="p-6 space-y-4 hover:bg-white/[0.01] transition-colors relative group">
+                          {/* Top: DateTime & Delete Button */}
+                          <div className="flex justify-between items-center">
+                            <span className="text-white/30 text-xs font-semibold">
+                              {new Date(item.created_at).toLocaleDateString()} {new Date(item.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            </span>
                             <button 
                               onClick={() => handleDeleteInquiry(item.id)}
                               className="p-2 text-white/40 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all"
@@ -466,62 +578,78 @@ export default function Admin() {
                             >
                               <Trash2 size={16} />
                             </button>
-                          </td>
-                        </tr>
+                          </div>
+                          
+                          {/* Company Info */}
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-brand font-black text-base">
+                              <Building2 size={15} /> {item.company_name}
+                            </div>
+                            <div className="flex items-center gap-2 text-white/80 text-sm">
+                              <UserIcon size={14} className="text-white/40" /> {item.manager_name}
+                            </div>
+                          </div>
+
+                          {/* Contact Details */}
+                          <div className="grid grid-cols-1 gap-1.5 p-3 bg-white/[0.03] rounded-xl border border-white/5 text-xs">
+                            <div className="flex items-center gap-2 text-white/60">
+                              <Mail size={12} className="text-white/40" /> {item.email}
+                            </div>
+                            <div className="flex items-center gap-2 text-white/60">
+                              <Phone size={12} className="text-white/40" /> {item.phone}
+                            </div>
+                          </div>
+
+                          {/* Interested Services */}
+                          <div className="space-y-1">
+                            <div className="text-[10px] font-black text-white/30 uppercase tracking-wider">관심 서비스</div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {item.interested_services.split(',').map((s: string, idx: number) => (
+                                <span key={idx} className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-white/60 whitespace-nowrap">
+                                  {s.trim()}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Request Message */}
+                          <div className="space-y-1">
+                            <div className="text-[10px] font-black text-white/30 uppercase tracking-wider">요청 메시지</div>
+                            <p className="text-xs text-white/70 font-medium leading-relaxed bg-white/[0.01] p-3 rounded-xl border border-white/5 break-keep">
+                              {item.message || '-'}
+                            </p>
+                          </div>
+                        </div>
                       ))
                     )}
-                  </tbody>
-                </table>
-              ) : (
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-white/5 bg-white/[0.01]">
-                      {logSortOrder === 'recent' ? (
-                        <>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">시간</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">구분</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">텍스트/ID</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">위치</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기기 정보</th>
-                        </>
-                      ) : (
-                        <>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">순위</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">클릭 요소 (텍스트/ID)</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-32">클릭 횟수</th>
-                          <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">주요 위치</th>
-                        </>
-                      )}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-white/5">
+                  </div>
+                ) : (
+                  <div className="divide-y divide-white/5">
                     {(() => {
                       const filtered = getFilteredLogs();
-                      if (filtered.length === 0) return (
-                        <tr><td colSpan={5} className="p-20 text-center text-white/20 font-bold">해당 기간에 수집된 로그가 없습니다.</td></tr>
-                      );
+                      if (filtered.length === 0) {
+                        return <div className="p-16 text-center text-white/20 font-bold text-sm">해당 기간에 수집된 로그가 없습니다.</div>;
+                      }
                       if (logSortOrder === 'recent') {
                         return filtered.slice((logPage - 1) * LOG_PAGE_SIZE, logPage * LOG_PAGE_SIZE).map((log) => (
-                          <tr key={log.id} className="hover:bg-white/[0.02] transition-colors group">
-                            <td className="p-6 whitespace-nowrap text-sm text-white/30">
-                              {new Date(log.created_at).toLocaleString()}
-                            </td>
-                            <td className="p-6">
-                              <span className="px-3 py-1 bg-brand/10 text-brand text-[10px] font-black rounded-full border border-brand/20 uppercase">
+                          <div key={log.id} className="p-5 space-y-2.5 text-xs">
+                            <div className="flex justify-between items-center text-[10px]">
+                              <span className="text-white/30">{new Date(log.created_at).toLocaleString()}</span>
+                              <span className="px-2 py-0.5 bg-brand/10 text-brand font-black rounded-full border border-brand/20 uppercase">
                                 {log.event_type}
                               </span>
-                            </td>
-                            <td className="p-6">
-                              <div className="flex flex-col">
-                                <span className="text-white font-bold line-clamp-1">{log.element_text || '-'}</span>
-                                <span className="text-white/20 text-[10px] font-mono">{log.element_id || '-'}</span>
-                              </div>
-                            </td>
-                            <td className="p-6 text-white/60 font-medium text-sm">{log.page_path}</td>
-                            <td className="p-6 max-w-xs">
-                              <p className="text-[10px] text-white/20 font-mono truncate hover:whitespace-normal transition-all">{log.user_agent}</p>
-                            </td>
-                          </tr>
+                            </div>
+                            <div>
+                              <div className="text-sm font-bold text-white leading-tight">{log.element_text || '-'}</div>
+                              {log.element_id && <div className="text-[10px] text-white/20 font-mono mt-0.5">[ID] {log.element_id}</div>}
+                            </div>
+                            <div className="text-white/50">
+                              <span className="font-bold text-brand mr-1">위치:</span> {log.page_path}
+                            </div>
+                            <div className="text-[9px] text-white/20 font-mono truncate hover:whitespace-normal" title={log.user_agent}>
+                              {log.user_agent}
+                            </div>
+                          </div>
                         ));
                       } else {
                         const counts: { [key: string]: any } = {};
@@ -531,29 +659,28 @@ export default function Admin() {
                           counts[key].count++;
                         });
                         return Object.values(counts).sort((a, b) => b.count - a.count).map((item, idx) => (
-                          <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
-                            <td className="p-6">
-                              <span className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-black ${
+                          <div key={idx} className="p-5 flex items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-black shrink-0 ${
                                 idx === 0 ? 'bg-brand text-white' : idx === 1 ? 'bg-white/20 text-white' : idx === 2 ? 'bg-white/10 text-white/60' : 'bg-white/5 text-white/30'
                               }`}>{idx + 1}</span>
-                            </td>
-                            <td className="p-6"><div className="flex flex-col text-sm"><span className="text-white font-bold">{item.text}</span>{item.id && <span className="text-white/20 text-[10px] font-mono">{item.id}</span>}</div></td>
-                            <td className="p-6">
-                              <div className="flex items-center gap-3">
-                                <div className="flex-grow h-1.5 bg-white/5 rounded-full overflow-hidden max-w-[100px]">
-                                  <div className="h-full bg-brand" style={{ width: `${Math.min(100, (item.count / filtered.length) * 500)}%` }}></div>
-                                </div>
-                                <span className="text-brand font-black text-lg">{item.count}</span>
+                              <div className="flex flex-col text-xs">
+                                <span className="text-white font-bold">{item.text}</span>
+                                {item.id && <span className="text-white/20 text-[9px] font-mono">{item.id}</span>}
+                                <span className="text-white/40 text-[10px] italic mt-0.5">{item.path}</span>
                               </div>
-                            </td>
-                            <td className="p-6 text-white/40 text-xs font-medium italic">{item.path}</td>
-                          </tr>
+                            </div>
+                            <div className="text-right shrink-0">
+                              <span className="text-brand font-black text-base">{item.count}</span>
+                              <span className="text-white/30 text-xs ml-1">회</span>
+                            </div>
+                          </div>
                         ));
                       }
                     })()}
-                  </tbody>
-                </table>
-              )}
+                  </div>
+                )}
+              </div>
               {/* 페이지네이션 (로그 탭 + 최신순일 때만) */}
               {activeTab === 'logs' && logSortOrder === 'recent' && (() => {
                 const filtered = getFilteredLogs();
