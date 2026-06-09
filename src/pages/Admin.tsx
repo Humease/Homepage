@@ -406,7 +406,7 @@ export default function Admin() {
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">기업 정보</th>
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none">상세 연락처</th>
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-48">관심 서비스</th>
-                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[360px]">요청 메시지</th>
+                      <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none min-w-[220px]">요청 메시지</th>
                       <th className="p-6 text-xs font-black text-white/30 uppercase tracking-widest leading-none w-20 text-center">삭제</th>
                     </tr>
                   </thead>
@@ -453,7 +453,7 @@ export default function Admin() {
                               ))}
                             </div>
                           </td>
-                          <td className="p-6 min-w-[360px]">
+                          <td className="p-6 min-w-[220px]">
                             <p className="text-sm text-white/60 group-hover:text-white/90 transition-all font-medium leading-relaxed">
                               {item.message || '-'}
                             </p>
